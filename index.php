@@ -21,17 +21,17 @@
   <div id="createUser">
     <h3>CREATE USER</h3>
     <?php
-      $email = "test@live.com";
+      $email = "malik96sharfo@hotmail.com";
       //echo $email . "<br>";
-      $firstname = "Test1";
+      $firstname = "Malik";
       //echo $firstname . "<br>";
-      $lastname = "Test2";
+      $lastname = "Sharfo";
       //echo $lastname . "<br>";
-      $password = "Test123";
+      $password = "AdminPassword";
       $lastlogin = date("Y/m/d h:i:s");
-      $isAdmin = false;
+      $isAdmin = true;
       //die;
-      //createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
+      createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
     ?>
   </div>
 
@@ -66,10 +66,10 @@
     <h3>EDIT PASSWORD</h3>
     <?php
       $email = "test@live.com";
-      $oldPassword = "123456789password";
-      $newPassword = "testpwd";
+      $oldPassword = "testpwd";
+      $newPassword = "password";
       $lastlogin = date("Y/m/d h:i:s");
-      editPassword($email, $oldPassword, $newPassword, $lastlogin);
+      //editPassword($email, $oldPassword, $newPassword, $lastlogin);
     ?>
   </div>
 
