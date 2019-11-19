@@ -1,6 +1,7 @@
 <?php
   //include 'Datalayer\db_connection.php';
   include('Datalayer\carmapper.php');
+  include('Datalayer\usermapper.php');
   /*
   OBS!!!
   THESE CODINGS BELOW IS JUST FOR TEST PURPOSES
@@ -17,10 +18,68 @@
   <title>Cars test</title>
 </head>
 <body>
+  <div id="createUser">
+    <h3>CREATE USER</h3>
+    <?php
+      $email = "test@live.com";
+      //echo $email . "<br>";
+      $firstname = "Test1";
+      //echo $firstname . "<br>";
+      $lastname = "Test2";
+      //echo $lastname . "<br>";
+      $password = "Test123";
+      $lastlogin = date("Y/m/d h:i:s");
+      $isAdmin = false;
+      //die;
+      //createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
+    ?>
+  </div>
+
+  <div id="editUserFirstLast">
+    <h3>EDIT USER</h3>
+    <?php
+      $email = "cool_boy_kuki@hotmail.com";
+      //echo $email . "<br>";
+      $firstname = "Testfirst";
+      //echo $firstname . "<br>";
+      $lastname = "Testlast";
+      //echo $lastname . "<br>";
+      $password = "12hellodummy34";
+      $lastlogin = date("Y/m/d h:i:s");
+      //editUserFirstAndLastname($email, $firstname, $lastname, $lastlogin);
+    ?>
+  </div>
+
+  <div id="editEmail">
+    <h3>EDIT EMAIL</h3>
+    <?php
+      $oldEmail = "dummy@hotmail.com";
+      //echo $oldEmail . "<br>";
+      $newEmail = "cool_boy_kuki@hotmail.com";
+      //echo $newEmail . "<br>";
+      $lastlogin = date("Y/m/d h:i:s");
+      //editEmail($oldEmail, $newEmail, $lastlogin);
+    ?>
+  </div>
+
+  <div id="editPass">
+    <h3>EDIT PASSWORD</h3>
+    <?php
+      $email = "test@live.com";
+      $oldPassword = "123456789password";
+      $newPassword = "testpwd";
+      $lastlogin = date("Y/m/d h:i:s");
+      editPassword($email, $oldPassword, $newPassword, $lastlogin);
+    ?>
+  </div>
+
+  <!--------------------------------------------------------------------------->
+  <!---BELOW IS THE CAR PART--->
+
   <div id="read">
     <h3>READ ALL CARS</h3>
     <?php
-      getAll();
+      //getAll();
         //below is just a test for the first include, that a connection is established
           // $sql = "select * from information;";
           // $result = mysqli_query($conn, $sql);
