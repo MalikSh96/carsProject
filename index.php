@@ -17,7 +17,7 @@
   <title>Cars test</title>
 </head>
 <body>
-  <div id="reade">
+  <div id="read">
     <h3>READ ALL CARS</h3>
     <?php
       getAll();
@@ -42,27 +42,27 @@
     <h3>CREATING A CAR</h3>
     <?php
       //Hardcode inserting before going to insert through forms
-      $design = "Audi";
+      $design = "Suzuki";
       //echo $design . "<br>";
-      $design_model = "A4 Station";
+      $design_model = "Swift";
       //echo $design_model . "<br>";
-      $fuel = "Diesel";
+      $fuel = "Benzin";
       //echo $fuel . "<br>";
-      $model_year = 2005;
+      $model_year = 2010;
       //echo $model_year . "<br>";
-      $kilometers = 500000;
+      $kilometers = 345000;
       //echo $kilometers . "<br>";
-      $color = "Black";
+      $color = "Silver";
       //echo $color . "<br>";
       $steering_type = "Servo steering";
       //echo $steering_type . "<br>";
       $gear_type = "Manual";
       //echo $gear_type . "<br>";
-      $serialnumber = "12345Audi";
+      $serialnumber = "SuzuSwift431";
       //echo $serialnumber . "<br>";
       $updated = date("Y/m/d h:i:s"); //<--returns current date/time OF the SERVER
       //echo $updated . "<br>";
-      createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+      //createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
      ?>
    </div>
 
@@ -78,26 +78,26 @@
      //$id = 1;
      //echo $id . "<br>";
      $design = "Audi";
-     echo $design . "<br>";
+     //echo $design . "<br>";
      $design_model = "A4 Sedan";
-     echo $design_model . "<br>";
+     //echo $design_model . "<br>";
      $fuel = "Benzin";
-     echo $fuel . "<br>";
+     //echo $fuel . "<br>";
      $model_year = 2004;
-     echo $model_year . "<br>";
+     //echo $model_year . "<br>";
      $kilometers = 550000;
-     echo $kilometers . "<br>";
+     //echo $kilometers . "<br>";
      $color = "White";
-     echo $color . "<br>";
+     //echo $color . "<br>";
      $steering_type = "Servo steering";
-     echo $steering_type . "<br>";
+     //echo $steering_type . "<br>";
      $gear_type = "Manual";
-     echo $gear_type . "<br>";
+     //echo $gear_type . "<br>";
      $serialnumber = "12345Audi";
-     echo $serialnumber . "<br>";
+     //echo $serialnumber . "<br>";
      $updated = date("Y/m/d h:i:s"); //<--returns current date/time OF the SERVER
-     echo $updated . "<br>";
-     updateCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+     //echo $updated . "<br>";
+     //updateCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
      ?>
    </div>
 
@@ -110,11 +110,11 @@
         SERIALNUMBER because the SERIALNUMBER is the actual UNIQUE id of
         a car
       */
-      $id = 2;
+      //$id = 4;
       //echo $id . "<br>";
-      $serialnumber = "AudiSerialNumber12345";
+      $serialnumber = "Audi12345";
       //echo $serialnumber . "<br>";
-      //deleteCar($id);
+      //deleteCar($serialnumber);
      ?>
    </div>
 </body>

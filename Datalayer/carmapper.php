@@ -1,8 +1,7 @@
 <?php
 include_once 'db_connection.php';
 
-  function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated)
-  {
+  function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
@@ -63,7 +62,7 @@ include_once 'db_connection.php';
     }
   }
 
-  function deleteCar($id){
+  function deleteCar($serialnumber){
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
@@ -71,7 +70,7 @@ include_once 'db_connection.php';
     }
     else{
       echo "CONNECTED -- executing task <br>";
-      $query = "DELETE FROM information WHERE id = '$id'";
+      $query = "DELETE FROM information WHERE serialnumber = '$serialnumber'";
       var_dump($query);
       mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     }
