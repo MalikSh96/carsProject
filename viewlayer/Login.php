@@ -44,9 +44,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
       //make use of your usershandler login function
-      $getEmail = getUserByEmail($email);
+      $getEmail = getUserByEmailHandler($email);
+      var_dump($getEmail);
+      die;
       //I AM HERE
-      //-----------------------------------------------------------------------
+      //------------------------------------------------------------------------
+      //------------------------------------------------------------------------
 
       // Attempt to execute the prepared statement
       if(mysqli_stmt_execute($stmt)){
