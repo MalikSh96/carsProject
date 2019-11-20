@@ -45,4 +45,8 @@ function deleteCarHandler($serialnumber){
 
   deleteCar($serialnumber);
 }
+
+function getAllCarsHandler(){
+  getAllCars();
+}
 ?>

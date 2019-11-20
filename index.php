@@ -94,7 +94,7 @@
   <div id="read">
     <h3>READ ALL CARS</h3>
     <?php
-      //getAll();
+      getAllCarsHandler();
     ?>
   </div>
 
@@ -174,7 +174,7 @@
       //echo $id . "<br>";
       $serialnumber = "SuzuSwift431";
       //echo $serialnumber . "<br>";
-      deleteCarHandler($serialnumber);
+      //deleteCarHandler($serialnumber);
      ?>
    </div>
 </body>

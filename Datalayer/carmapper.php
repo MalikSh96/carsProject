@@ -76,7 +76,7 @@ include_once 'db_connection.php';
     }
   }
 
-  function getAll(){
+  function getAllCars(){
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
