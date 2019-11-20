@@ -112,13 +112,17 @@ function editPassword($email, $oldPassword, $newPassword, $lastlogin){
       //if passwords match we hash the new before we query
       $hash = password_hash($newPassword, PASSWORD_BCRYPT);
       echo "MATCHING PASSWORD";
+      $query = "UPDATE users SET password = '$hash',
+      lastlogin = '$lastlogin'
+      WHERE email = '$email'";
+      mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
 	  } else {
 	    echo "PASSWORD ARE NOT MATCHING, YOU CAN'T EDIT YOUR PASSWORD";
+      $query = "UPDATE users SET password = '$oldPass',
+      lastlogin = '$lastlogin'
+      WHERE email = '$email'";
+      mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     }
-    $query = "UPDATE users SET password = '$hash',
-              lastlogin = '$lastlogin'
-              WHERE email = '$email'";
-    mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
   }
 }
 

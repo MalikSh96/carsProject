@@ -1,9 +1,9 @@
 <?php
 //This file is used to preserve the 3-layer architecture and avoiding sql injections
 include('Datalayer\carmapper.php');
-include_once 'db_connection.php';
+include_once 'Db_connection.php';
 
-//Links
+//Links used
 //https://www.php.net/manual/en/mysqli.real-escape-string.php
 //https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
 
@@ -47,6 +47,7 @@ function deleteCarHandler($serialnumber){
 }
 
 function getAllCarsHandler(){
+  //Just a simple getter, no need to have considered sql injection
   getAllCars();
 }
 ?>

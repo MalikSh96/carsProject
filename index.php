@@ -36,55 +36,50 @@
   <div id="createUser">
     <h3>CREATE USER</h3>
     <?php
-      $email = "malik96sharfo@hotmail.com";
+      $email = "testmail@hotmail.com";
       //echo $email . "<br>";
-      $firstname = "Malik";
+      $firstname = "Not";
       //echo $firstname . "<br>";
-      $lastname = "Sharfo";
+      $lastname = "Admin";
       //echo $lastname . "<br>";
-      $password = "AdminPassword";
-      $lastlogin = date("Y/m/d h:i:s");
-      $isAdmin = true;
+      $password = "NonAdminPassword";
+      $isAdmin = false;
       //die;
-      //createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
+      //createUserHandler($email, $firstname, $lastname, $password, $isAdmin);
     ?>
   </div>
 
   <div id="editUserFirstLast">
     <h3>EDIT USER</h3>
     <?php
-      $email = "cool_boy_kuki@hotmail.com";
+      $email = "testmail@hotmail.com";
       //echo $email . "<br>";
-      $firstname = "Testfirst";
+      $firstname = "StillNot";
       //echo $firstname . "<br>";
-      $lastname = "Testlast";
+      $lastname = "Admin";
       //echo $lastname . "<br>";
-      $password = "12hellodummy34";
-      $lastlogin = date("Y/m/d h:i:s");
-      //editUserFirstAndLastname($email, $firstname, $lastname, $lastlogin);
+      //editUserFirstAndLastnameHandler($email, $firstname, $lastname);
     ?>
   </div>
 
   <div id="editEmail">
     <h3>EDIT EMAIL</h3>
     <?php
-      $oldEmail = "dummy@hotmail.com";
+      $oldEmail = "testmail@hotmail.com";
       //echo $oldEmail . "<br>";
-      $newEmail = "cool_boy_kuki@hotmail.com";
+      $newEmail = "newmail@live.dk";
       //echo $newEmail . "<br>";
-      $lastlogin = date("Y/m/d h:i:s");
-      //editEmail($oldEmail, $newEmail, $lastlogin);
+      //editEmailHandler($oldEmail, $newEmail);
     ?>
   </div>
 
   <div id="editPass">
     <h3>EDIT PASSWORD</h3>
     <?php
-      $email = "test@live.com";
-      $oldPassword = "testpwd";
-      $newPassword = "password";
-      $lastlogin = date("Y/m/d h:i:s");
-      //editPassword($email, $oldPassword, $newPassword, $lastlogin);
+      $email = "newmail@live.dk";
+      $oldPassword = "NonAdminPassword";
+      $newPassword = "123NonAdminPassword";
+      editPasswordHandler($email, $oldPassword, $newPassword);
     ?>
   </div>
 
@@ -94,7 +89,7 @@
   <div id="read">
     <h3>READ ALL CARS</h3>
     <?php
-      getAllCarsHandler();
+      //getAllCarsHandler();
     ?>
   </div>
 
