@@ -1,7 +1,7 @@
 <?php
 //This file is used to preserve the 3-layer architecture and avoiding sql injections
-include('Datalayer\carmapper.php');
-include_once 'Db_connection.php';
+include('datalayer\carmapper.php');
+include_once 'datalayer\Db_connection.php';
 
 //Links used
 //https://www.php.net/manual/en/mysqli.real-escape-string.php

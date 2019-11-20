@@ -1,6 +1,6 @@
 <?php
 include('datalayer\Usermapper.php');
-include_once 'Db_connection.php';
+include_once 'datalayer\Db_connection.php';
 
 function createUserHandler($email, $firstname, $lastname, $password, $isAdmin){
   global $conn;
@@ -54,5 +54,14 @@ function getAllUsersHandler(){
 
 function getUserByEmailHandler($email){
   getUserByEmail($email);
+}
+
+function userLoginHandler($email, $password){
+  global $conn;
+  $email      = mysqli_real_escape_string($conn, $email);
+  $password   = $password;
+  $lastlogin  = date("Y/m/d h:i:s");
+
+  userLogin($email, $password, $lastlogin);
 }
 ?>

@@ -186,4 +186,34 @@ function getUserByEmail($email){
     }
   }
 }
+
+function userLogin($email, $password, $lastlogin){
+  global $conn;
+  if(!$conn){
+    echo "NOT CONNECTED";
+  }
+  else{
+    $query = "SELECT email, firstname, lastname, password FROM cars.users WHERE email = '$email'";
+
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        echo "<br>";
+        echo "User found by email: <br>";
+        echo $row['email'];
+        echo "<br>";
+        echo $row['firstname'];
+        echo "<br>";
+        echo $row['lastname'];
+        echo "<br>";
+        echo $row['password'];
+        echo "<br>";
+      }
+    }
+    return $resultCheck;
+  }
+}
 ?>
