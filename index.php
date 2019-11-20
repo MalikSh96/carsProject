@@ -1,6 +1,6 @@
 <?php
   //include 'Datalayer\db_connection.php';
-  include('Datalayer\carmapper.php');
+  include('Businesslayer\carshandler.php');
   include('Datalayer\usermapper.php');
   /*
   OBS!!!
@@ -18,6 +18,21 @@
   <title>Cars test</title>
 </head>
 <body>
+  <div id="getAllUsers">
+    <h3>GET ALL USERS</h3>
+    <?php
+      //getAllUsers();
+    ?>
+  </div>
+
+  <div id="getUserByEmail">
+    <h3>GET USER BY EMAIL</h3>
+    <?php
+      $email = "malik96sharfo@hotmail.com";
+      //getUserByEmail($email);
+    ?>
+  </div>
+
   <div id="createUser">
     <h3>CREATE USER</h3>
     <?php
@@ -31,7 +46,7 @@
       $lastlogin = date("Y/m/d h:i:s");
       $isAdmin = true;
       //die;
-      createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
+      //createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
     ?>
   </div>
 
@@ -80,20 +95,6 @@
     <h3>READ ALL CARS</h3>
     <?php
       //getAll();
-        //below is just a test for the first include, that a connection is established
-          // $sql = "select * from information;";
-          // $result = mysqli_query($conn, $sql);
-          // $resultCheck = mysqli_num_rows($result); //checks for data
-          //
-          // if($resultCheck > 0){
-          //   while($row = mysqli_fetch_assoc($result)){
-          //     //mysqli_fetch_assoc() gets all results
-          //     //$row becomes and array due to ^
-          //     echo $row['design'];
-          //     echo "<br>";
-          //     echo $row['design_model'];
-          //   }
-          // }
     ?>
   </div>
 
@@ -101,27 +102,27 @@
     <h3>CREATING A CAR</h3>
     <?php
       //Hardcode inserting before going to insert through forms
-      $design = "Suzuki";
+      $design = "Mercedes Benz";
       //echo $design . "<br>";
-      $design_model = "Swift";
+      $design_model = "E-Class";
       //echo $design_model . "<br>";
       $fuel = "Benzin";
       //echo $fuel . "<br>";
-      $model_year = 2010;
+      $model_year = 2019;
       //echo $model_year . "<br>";
-      $kilometers = 345000;
+      $kilometers = 40000;
       //echo $kilometers . "<br>";
-      $color = "Silver";
+      $color = "Navy blue";
       //echo $color . "<br>";
       $steering_type = "Servo steering";
       //echo $steering_type . "<br>";
       $gear_type = "Manual";
       //echo $gear_type . "<br>";
-      $serialnumber = "SuzuSwift431";
+      $serialnumber = "MercedesBenz";
       //echo $serialnumber . "<br>";
       $updated = date("Y/m/d h:i:s"); //<--returns current date/time OF the SERVER
       //echo $updated . "<br>";
-      //createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+      //createCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
      ?>
    </div>
 
@@ -136,27 +137,27 @@
      */
      //$id = 1;
      //echo $id . "<br>";
-     $design = "Audi";
+     $design = "Mercedes Benz";
      //echo $design . "<br>";
-     $design_model = "A4 Sedan";
+     $design_model = "E300";
      //echo $design_model . "<br>";
      $fuel = "Benzin";
      //echo $fuel . "<br>";
-     $model_year = 2004;
+     $model_year = 2019;
      //echo $model_year . "<br>";
-     $kilometers = 550000;
+     $kilometers = 10000;
      //echo $kilometers . "<br>";
-     $color = "White";
+     $color = "Sky blue";
      //echo $color . "<br>";
      $steering_type = "Servo steering";
      //echo $steering_type . "<br>";
      $gear_type = "Manual";
      //echo $gear_type . "<br>";
-     $serialnumber = "12345Audi";
+     $serialnumber = "MercedesBenz";
      //echo $serialnumber . "<br>";
      $updated = date("Y/m/d h:i:s"); //<--returns current date/time OF the SERVER
      //echo $updated . "<br>";
-     //updateCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+     //updateCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
      ?>
    </div>
 
@@ -171,9 +172,9 @@
       */
       //$id = 4;
       //echo $id . "<br>";
-      $serialnumber = "Audi12345";
+      $serialnumber = "SuzuSwift431";
       //echo $serialnumber . "<br>";
-      //deleteCar($serialnumber);
+      deleteCarHandler($serialnumber);
      ?>
    </div>
 </body>

@@ -121,4 +121,65 @@ function editPassword($email, $oldPassword, $newPassword, $lastlogin){
     mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
   }
 }
+
+function getAllUsers(){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  }
+  else{
+    $query = "SELECT * FROM cars.users";
+    $result = mysqli_query($conn, $query);
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        //mysqli_fetch_assoc() gets all results
+        //$row becomes and array due to ^
+        echo "--------------------<br>";
+        echo $row['email'];
+        echo "<br>";
+        echo $row['firstname'];
+        echo "<br>";
+        echo $row['lastname'];
+        echo "<br>";
+        echo $row['isAdmin'];
+        echo "<br>";
+        echo $row['lastlogin'];
+        echo "<br>";
+      }
+    }
+  }
+}
+
+function getUserByEmail($email){
+  global $conn;
+  if(!$conn){
+    echo "NOT CONNECTED";
+  }
+  else{
+    $query = "SELECT * FROM cars.users where email = '$email'";
+
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        echo "<br>";
+        echo "User found by email: <br>";
+        echo $row['email'];
+        echo "<br>";
+        echo $row['firstname'];
+        echo "<br>";
+        echo $row['lastname'];
+        echo "<br>";
+        echo $row['isAdmin'];
+        echo "<br>";
+        echo $row['lastlogin'];
+      }
+    }
+  }
+}
 ?>
