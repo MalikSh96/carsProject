@@ -1,5 +1,5 @@
 <?php
-include_once 'db_connection.php';
+include_once 'Db_connection.php';
 
   function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
     global $conn; //using global before $conn to make this function awaare to access the connection

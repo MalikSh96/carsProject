@@ -2,7 +2,7 @@
 //Library
 require 'Support\password_compat\lib\password.php';
 
-include_once 'db_connection.php';
+include_once 'Db_connection.php';
 
 //about hashing passwords
 //https://stackoverflow.com/questions/11177557/why-is-password-hash-different-for-2-users-with-the-same-password
