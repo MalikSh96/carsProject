@@ -21,7 +21,7 @@
   <div id="getAllUsers">
     <h3>GET ALL USERS</h3>
     <?php
-      //getAllUsers();
+      //getAllUsershandler();
     ?>
   </div>
 
@@ -79,7 +79,7 @@
       $email = "newmail@live.dk";
       $oldPassword = "NonAdminPassword";
       $newPassword = "123NonAdminPassword";
-      editPasswordHandler($email, $oldPassword, $newPassword);
+      //editPasswordHandler($email, $oldPassword, $newPassword);
     ?>
   </div>
 

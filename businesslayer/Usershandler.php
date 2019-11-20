@@ -47,4 +47,12 @@ function editPasswordHandler($email, $oldPassword, $newPassword){
 
   editPassword($email, $oldPassword2, $newPassword2, $lastlogin);
 }
+
+function getAllUsersHandler(){
+  getAllUsers();
+}
+
+function getUserByEmailHandler($email){
+  getUserByEmail($email);
+}
 ?>
