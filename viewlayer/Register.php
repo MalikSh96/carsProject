@@ -34,10 +34,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   } else{
     $email = trim($_POST["email"]);
     //var_dump($email);
-    echo "<br>";
-    var_dump(checkForExisitingEmailHandler($email));
-    die;
-    $email_err = "This email is already taken.";
+    //echo "<br>";
+    //var_dump(checkForExisitingEmailHandler($email));
+    //die;
+    //$email_err = "This email is already taken.";
   }
 
   // Check if firstname is empty

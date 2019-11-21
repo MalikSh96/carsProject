@@ -29,7 +29,7 @@
     <h3>GET USER BY EMAIL</h3>
     <?php
       $email = "malik96sharfo@hotmail.com";
-      checkForExisitingEmailHandler($email);
+      //checkForExisitingEmailHandler($email);
       //getUserByEmail($email);
     ?>
   </div>
@@ -43,7 +43,7 @@
       //echo $firstname . "<br>";
       $lastname = "s";
       //echo $lastname . "<br>";
-      $password = "1234";
+      $password = "malik2660";
       $isAdmin = false;
       //die;
       //createUserHandler($email, $firstname, $lastname, $password, $isAdmin);
@@ -77,9 +77,9 @@
   <div id="editPass">
     <h3>EDIT PASSWORD</h3>
     <?php
-      $email = "newmail@live.dk";
-      $oldPassword = "NonAdminPassword";
-      $newPassword = "123NonAdminPassword";
+      $email = "testmail@hotmail.com";
+      $oldPassword = "2660malik";
+      $newPassword = "enter new password";
       //editPasswordHandler($email, $oldPassword, $newPassword);
     ?>
   </div>

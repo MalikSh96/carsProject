@@ -67,11 +67,13 @@ function getUserByEmailHandler($email){
 
 function userLoginHandler($email, $password){
   global $conn;
-  $email2      = mysqli_real_escape_string($conn, $email);
-  $password2   = $password;
+  $email      = mysqli_real_escape_string($conn, $email);
+  var_dump($email);
+  $password   = $password;
+  var_dump($password);
   $lastlogin  = date("Y/m/d h:i:s");
-
-  userLogin($email2, $password2, $lastlogin);
+  echo "<br>IN USERSHANDLER.PHP <br><br><br>";
+  userLogin($email, $password, $lastlogin);
 }
 
 function checkForExisitingEmailHandler($email){

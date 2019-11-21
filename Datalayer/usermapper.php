@@ -105,7 +105,6 @@ function editPassword($email, $oldPassword, $newPassword, $lastlogin){
     $result = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
     $resultCheck = mysqli_fetch_assoc($result); //is here returning the hashed password from the database
     $oldPass = $resultCheck['password']; //<-- hashed database pwd
-    var_dump($oldPass);
     $hash = "";
     //if the users desires to edit his password we need to make sure his old and new matches
     if(password_verify($oldPassword, $oldPass)){
@@ -214,17 +213,14 @@ function userLogin($email, $password, $lastlogin){
     $resultPassword = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
     $resultCheckPassword = mysqli_fetch_assoc($resultPassword); //is here returning the hashed password from the database
     $pwd = $resultCheckPassword['password']; //<-- hashed database pwd
-
     $query = "SELECT id, email, firstname, lastname, password FROM cars.users where email = '$email' and password = '$pwd'";
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     $resultCheck = mysqli_num_rows($result); //checks for data
-
     if(password_verify($password, $pwd)){
       if($resultCheck > 0){
         var_dump("IF");
         //die;
         //return $result;
-
         //While loop might not be needed if you just return the $result
         while($row = mysqli_fetch_assoc($result)){
           echo "<br>";
@@ -237,7 +233,6 @@ function userLogin($email, $password, $lastlogin){
           echo "<br>";
           echo $row['password'];
           echo "<br>";
-
           //or returning array
           //$valueArr[] = $row; //add row to array
         }
