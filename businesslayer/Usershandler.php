@@ -1,17 +1,25 @@
 <?php
-include('datalayer\Usermapper.php');
-include_once 'datalayer\Db_connection.php';
+//include('datalayer\Usermapper.php');
+//include_once 'datalayer\Db_connection.php';
 
-function createUserHandler($email, $firstname, $lastname, $password, $isAdmin){
+include('C:\xampp\htdocs\CarsProject\datalayer\Usermapper.php');
+include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
+
+function createUserHandler($email, $firstname, $lastname, $password){
   global $conn;
   $email         = mysqli_real_escape_string($conn, $email);
+  var_dump($email);
   $firstname     = mysqli_real_escape_string($conn, $firstname);
+  var_dump($firstname);
   $lastname      = mysqli_real_escape_string($conn, $lastname);
+  var_dump($lastname);
   $password      = mysqli_real_escape_string($conn, $password);
+  var_dump($password);
   $lastlogin     = date("Y/m/d h:i:s");
-  $isAdmin       = mysqli_real_escape_string($conn, $isAdmin);
+  //die;
+  //$isAdmin       = mysqli_real_escape_string($conn, $isAdmin);
 
-  createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin);
+  createUser($email, $firstname, $lastname, $password, $lastlogin);
 }
 
 function editUserFirstAndLastnameHandler($email, $firstname, $lastname){
@@ -53,15 +61,20 @@ function getAllUsersHandler(){
 }
 
 function getUserByEmailHandler($email){
+  var_dump("TEST");
   getUserByEmail($email);
 }
 
 function userLoginHandler($email, $password){
   global $conn;
-  $email      = mysqli_real_escape_string($conn, $email);
-  $password   = $password;
+  $email2      = mysqli_real_escape_string($conn, $email);
+  $password2   = $password;
   $lastlogin  = date("Y/m/d h:i:s");
 
-  userLogin($email, $password, $lastlogin);
+  userLogin($email2, $password2, $lastlogin);
+}
+
+function checkForExisitingEmailHandler($email){
+  checkForExisitingEmail($email);
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
 //Library
-require 'Support\password_compat\lib\password.php';
+//require 'Support\password_compat\lib\password.php';
+require 'C:\xampp\htdocs\CarsProject\Support\password_compat\lib\password.php';
 
 include_once 'Db_connection.php';
 
@@ -9,7 +10,7 @@ include_once 'Db_connection.php';
 //link used
 //https://github.com/ircmaxell/password_compat
 
-function createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdmin){
+function createUser($email, $firstname, $lastname, $password, $lastlogin){
   global $conn; //using global before $conn to make this function awaare to access the connection
   if(!$conn)
   {
@@ -36,15 +37,13 @@ function createUser($email, $firstname, $lastname, $password, $lastlogin, $isAdm
                   firstname,
                   lastname,
                   password,
-                  lastlogin,
-                  isAdmin)
+                  lastlogin)
               VALUES
                   ('$email',
                   '$firstname',
                   '$lastname',
                   '$hash',
-                  '$lastlogin',
-                  '$isAdmin')";
+                  '$lastlogin')";
     //var_dump($query);
     //die;
     mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
@@ -106,6 +105,7 @@ function editPassword($email, $oldPassword, $newPassword, $lastlogin){
     $result = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
     $resultCheck = mysqli_fetch_assoc($result); //is here returning the hashed password from the database
     $oldPass = $resultCheck['password']; //<-- hashed database pwd
+    var_dump($oldPass);
     $hash = "";
     //if the users desires to edit his password we need to make sure his old and new matches
     if(password_verify($oldPassword, $oldPass)){
@@ -179,6 +179,8 @@ function getUserByEmail($email){
         echo "<br>";
         echo $row['lastname'];
         echo "<br>";
+        echo $row['password'];
+        echo "<br>";
         echo $row['isAdmin'];
         echo "<br>";
         echo $row['lastlogin'];
@@ -187,33 +189,65 @@ function getUserByEmail($email){
   }
 }
 
-function userLogin($email, $password, $lastlogin){
+function checkForExisitingEmail($email){
   global $conn;
   if(!$conn){
     echo "NOT CONNECTED";
   }
   else{
-    $query = "SELECT email, firstname, lastname, password FROM cars.users WHERE email = '$email'";
-
+    $query = "SELECT email FROM cars.users where email = '$email'";
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+    $resultCheck = mysqli_fetch_assoc($result); //checks for data
+    $res = $resultCheck['email'];
+    echo $res;
+  }
+}
 
+function userLogin($email, $password, $lastlogin){
+  global $conn;
+  //$valueArr = array(); //creating the result array
+  if(!$conn){
+    echo "NOT CONNECTED";
+  }
+  else{
+    $getDatabasePass = "SELECT password FROM cars.users WHERE email = '$email'";
+    $resultPassword = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
+    $resultCheckPassword = mysqli_fetch_assoc($resultPassword); //is here returning the hashed password from the database
+    $pwd = $resultCheckPassword['password']; //<-- hashed database pwd
+
+    $query = "SELECT id, email, firstname, lastname, password FROM cars.users where email = '$email' and password = '$pwd'";
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     $resultCheck = mysqli_num_rows($result); //checks for data
 
-    if($resultCheck > 0){
-      while($row = mysqli_fetch_assoc($result)){
-        echo "<br>";
-        echo "User found by email: <br>";
-        echo $row['email'];
-        echo "<br>";
-        echo $row['firstname'];
-        echo "<br>";
-        echo $row['lastname'];
-        echo "<br>";
-        echo $row['password'];
-        echo "<br>";
+    if(password_verify($password, $pwd)){
+      if($resultCheck > 0){
+        var_dump("IF");
+        //die;
+        //return $result;
+
+        //While loop might not be needed if you just return the $result
+        while($row = mysqli_fetch_assoc($result)){
+          echo "<br>";
+          echo "User login accepted: <br>";
+          echo $row['id'];
+          echo "<br>";
+          echo $row['email'];
+          echo "<br>";
+          echo $row['firstname'] . " " . $row['lastname'];;
+          echo "<br>";
+          echo $row['password'];
+          echo "<br>";
+
+          //or returning array
+          //$valueArr[] = $row; //add row to array
+        }
+      } else{
+        var_dump("ELSE");
+        //die;
+        echo "INCORRECT PASSWORD";
+        //throw new ErrorException("FAILED TO LOGIN -- PASSWORD MIGHT BE WRONG");
       }
     }
-    return $resultCheck;
   }
 }
 ?>

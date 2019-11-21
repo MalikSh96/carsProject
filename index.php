@@ -1,7 +1,7 @@
 <?php
   //include 'Datalayer\db_connection.php';
   include('businesslayer\Carshandler.php');
-  include('businesslayer\Usershandler.php');
+  include 'businesslayer\Usershandler.php';
   /*
   OBS!!!
   THESE CODINGS BELOW IS JUST FOR TEST PURPOSES
@@ -29,6 +29,7 @@
     <h3>GET USER BY EMAIL</h3>
     <?php
       $email = "malik96sharfo@hotmail.com";
+      checkForExisitingEmailHandler($email);
       //getUserByEmail($email);
     ?>
   </div>
@@ -38,11 +39,11 @@
     <?php
       $email = "testmail@hotmail.com";
       //echo $email . "<br>";
-      $firstname = "Not";
+      $firstname = "m";
       //echo $firstname . "<br>";
-      $lastname = "Admin";
+      $lastname = "s";
       //echo $lastname . "<br>";
-      $password = "NonAdminPassword";
+      $password = "1234";
       $isAdmin = false;
       //die;
       //createUserHandler($email, $firstname, $lastname, $password, $isAdmin);
@@ -80,6 +81,17 @@
       $oldPassword = "NonAdminPassword";
       $newPassword = "123NonAdminPassword";
       //editPasswordHandler($email, $oldPassword, $newPassword);
+    ?>
+  </div>
+
+  <div id="userLogin">
+    <h3>TESTING USER LOGIN</h3>
+    <?php
+      $email = "testmail@hotmail.com";
+      $password = "1234";
+      //echo $email . "<br>";
+      //echo $password . "<br>";
+      //userLoginHandler($email, $password);
     ?>
   </div>
 
