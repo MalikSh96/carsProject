@@ -23,6 +23,7 @@
     <h3>GET ALL USERS</h3>
     <?php
       //getAllUsershandler();
+      userLoginHandler("malik96sharfo@hotmail.com", "malik2660");
     ?>
   </div>
 
@@ -30,7 +31,8 @@
     <h3>GET USER BY EMAIL</h3>
     <?php
       $email = "malik96sharfo@hotmail.com";
-      checkForExisitingEmailHandler($email);
+      $mail = checkForExisitingEmailHandler($email);
+      echo $mail;
       //getUserByEmail($email);
     ?>
   </div>

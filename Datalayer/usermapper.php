@@ -217,6 +217,7 @@ function userLogin($email, $password, $lastlogin){
     echo "NOT CONNECTED";
   }
   else{
+    $valueArr = array();
     $getDatabasePass = "SELECT password FROM cars.users WHERE email = '$email'";
     $resultPassword = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
     $resultCheckPassword = mysqli_fetch_assoc($resultPassword); //is here returning the hashed password from the database
@@ -227,7 +228,6 @@ function userLogin($email, $password, $lastlogin){
     if(password_verify($password, $pwd)){
       if($resultCheck > 0){
         var_dump("IF");
-        //die;
         //return $result;
         //While loop might not be needed if you just return the $result
         while($row = mysqli_fetch_assoc($result)){
@@ -242,13 +242,9 @@ function userLogin($email, $password, $lastlogin){
           echo $row['password'];
           echo "<br>";
           //or returning array
-          //$valueArr[] = $row; //add row to array
+          $valueArr[] = $row; //add row to array
+          return $valueArr;
         }
-      } else{
-        var_dump("ELSE");
-        //die;
-        echo "INCORRECT PASSWORD";
-        //throw new ErrorException("FAILED TO LOGIN -- PASSWORD MIGHT BE WRONG");
       }
     }
   }

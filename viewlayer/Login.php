@@ -45,26 +45,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($email_err) && empty($password_err)){
 
       //userLoginHandler is a function that calls another function, which returns a query result
-
-//OBS!!!OBS!!!OBS!!!OBS!!!OBS!!!
-      /*YOU NEED A CHECK TO SEE IF THE USER IS EXISTING IN THE DATABASE BEFORE YOU ARE ALLOWED TO
-        SIGN IN.
-        AS OF NOW YOU GET REDIRECTED TO THE WELCOME PAGE WITHOUT EVEN HAVING AN EXISTING USER.
-        WHICH MEANS YOUR userLoginHandler DOES NOT WORK AS INTENDED...
-      */
-      userLoginHandler($email, $password);
-      /*
-        BEFORE YOU START A SESSION MAKE SURE THAT YOU COMPARE PASSWORDS CORRECT
-        BECAUSE AS OF NOW YOU CAN SIGN IN WITH A RANDOM PASSWORD FOR AN EXISTING MAIL
-      */
-
-      session_start();
-      //Store data in session variables
-      $_SESSION["loggedin"] = true;
-      $_SESSION["id"] = $id;
-      $_SESSION["email"] = $email;
-      // Redirect user to welcome page
-      header("location: Welcome.php");
+      if(userLoginHandler($email, $password)){
+        session_start();
+        //Store data in session variables
+        $_SESSION["loggedin"] = true;
+        $_SESSION["id"] = $id;
+        $_SESSION["email"] = $email;
+        // Redirect user to welcome page
+        header("location: Welcome.php");
+      } else{
+        $_SESSION["loggedin"] = false;
+        try {
+          $errorTxt = '<span style="color: red;">FAILED TO SIGN IN!<br>CHECK THAT YOUR EMAIL/PASSWORD IS CORRECT.</span>';
+          echo $errorTxt;
+        } catch (Exception $e) {
+          echo 'Caught exception: ',  $e->getMessage(), "\n";
+        }
+      }
     }
     // Close connection
     mysqli_close($conn);

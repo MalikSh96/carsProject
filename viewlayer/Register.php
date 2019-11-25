@@ -60,34 +60,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
   //If every form is filled we go down here
   if(empty($email_err) && empty($password_err) && empty($firstname_err)
-&& empty($lastname_err) /*&& empty($confirm_password_err)*/){
+        && empty($lastname_err) /*&& empty($confirm_password_err)*/){
     // Check input errors before inserting in database
+    $email = trim($_POST["email"]);
+    //Trying to check if an email is already existing
+    if (checkForExisitingEmailHandler($email)){
+      $email_err = "This email is already taken.";
+      //die;
+    } else{
       $email = trim($_POST["email"]);
-      //Trying to check if an email is already existing
-      if (checkForExisitingEmailHandler($email)){
-        $email_err = "This email is already taken.";
-        //die;
+      //die;
+      if(strlen(trim($_POST["password"])) < 6){
+        //password must be specific length
+        $password_err = "Password must have atleast 6 characters.";
       } else{
-        $email = trim($_POST["email"]);
-        //die;
-        if(strlen(trim($_POST["password"])) < 6){
-          //password must be specific length
-          $password_err = "Password must have atleast 6 characters.";
-        } else{
-          $password = trim($_POST["password"]);
+        $password = trim($_POST["password"]);
 
-          /*$confirm_password = trim($_POST["confirm_password"]);
+        /*$confirm_password = trim($_POST["confirm_password"]);
           if(empty($password_err) && ($password != $confirm_password)){
-            $confirm_password_err = "Password did not match.";
-          }*/
+          $confirm_password_err = "Password did not match.";
+        }*/
 
-          //If everyhing is correct we create the user
-          createUserHandler($email, $firstname, $lastname, $password);
-          //redirecting after registering a user
-          header("location: Login.php");
-          //die;
-        }
+        //If everyhing is correct we create the user
+        createUserHandler($email, $firstname, $lastname, $password);
+        //redirecting after registering a user
+        header("location: Login.php");
+        //die;
       }
+    }
   }
     // Close connection
     mysqli_close($conn);
