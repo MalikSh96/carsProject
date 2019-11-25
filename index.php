@@ -2,6 +2,7 @@
   //include 'Datalayer\db_connection.php';
   include('businesslayer\Carshandler.php');
   include 'businesslayer\Usershandler.php';
+
   /*
   OBS!!!
   THESE CODINGS BELOW IS JUST FOR TEST PURPOSES
@@ -29,7 +30,7 @@
     <h3>GET USER BY EMAIL</h3>
     <?php
       $email = "malik96sharfo@hotmail.com";
-      //checkForExisitingEmailHandler($email);
+      checkForExisitingEmailHandler($email);
       //getUserByEmail($email);
     ?>
   </div>
@@ -47,6 +48,15 @@
       $isAdmin = false;
       //die;
       //createUserHandler($email, $firstname, $lastname, $password, $isAdmin);
+    ?>
+  </div>
+
+  <div id="editUserRights">
+    <h3>EDIT USER RIGHT</h3>
+    <?php
+      $email = "cool_boy_kuki@hotmail.com";
+      $isAdmin = false;
+      //setAdminRightsHandler($email, $isAdmin);
     ?>
   </div>
 

@@ -196,9 +196,17 @@ function checkForExisitingEmail($email){
   else{
     $query = "SELECT email FROM cars.users where email = '$email'";
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
-    $resultCheck = mysqli_fetch_assoc($result); //checks for data
-    $res = $resultCheck['email'];
-    echo $res;
+    $email = "";
+    $resultCheck = mysqli_num_rows($result); //checks for data
+    if($resultCheck === 1){
+      $emailGet = mysqli_fetch_assoc($result);
+      $email = $emailGet['email'];
+      return $email;
+    } else{
+      $emailGet = mysqli_fetch_assoc($result);
+      $email = $emailGet['email'];
+      return $email;
+    }
   }
 }
 
@@ -243,6 +251,30 @@ function userLogin($email, $password, $lastlogin){
         //throw new ErrorException("FAILED TO LOGIN -- PASSWORD MIGHT BE WRONG");
       }
     }
+  }
+}
+
+function setAdminRights($email, $isAdmin, $lastlogin){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  }
+  else{
+    echo "CONNECTED -- executing task <br>";
+
+    $queryOne = "SELECT email, isAdmin FROM cars.users WHERE email = '$email'";
+    $result = mysqli_query($conn, $queryOne) or trigger_error(mysqli_error($conn) . " in " . $queryOne);
+    $resultCheck = mysqli_fetch_assoc($result);
+    //var_dump($resultCheck);
+    //die;
+
+    $query = "UPDATE users SET isAdmin = '$isAdmin',
+              lastlogin = '$lastlogin'
+              WHERE email = '$email'";
+    var_dump($query);
+    //die;
+    mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
   }
 }
 ?>

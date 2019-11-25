@@ -14,6 +14,7 @@ $firstname = "";
 $lastname = "";
 $password = "";
 
+//Use the confirm password later once the entire registration is fixed
 //$confirm_password = "";
 
 $email_err = "";
@@ -26,19 +27,6 @@ $password_err = "";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   global $conn;
-
-  //validating the email;
-  if(empty(trim($_POST['email']))){
-    //If the user does not enter an email
-    $email_err = "Please enter an email";
-  } else{
-    $email = trim($_POST["email"]);
-    //var_dump($email);
-    //echo "<br>";
-    //var_dump(checkForExisitingEmailHandler($email));
-    //die;
-    //$email_err = "This email is already taken.";
-  }
 
   // Check if firstname is empty
   if(empty(trim($_POST["firstname"]))){
@@ -58,18 +46,40 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   //if the password is empty is our first check
   if(empty(trim($_POST["password"]))){
     $password_err = "Please enter a password.";
-  } elseif(strlen(trim($_POST["password"])) < 6){
-    //password must be specific length
-    $password_err = "Password must have atleast 6 characters.";
   }
 
+  if(empty(trim($_POST['email']))){
+    //If the user does not enter an email
+    $email_err = "Please enter an email";
+  }
+
+  //If every form is filled we go down here
   if(empty($email_err) && empty($password_err) && empty($firstname_err) && empty($lastname_err)){
     // Check input errors before inserting in database
-    //If everyhing is correct we create the user
-    createUserHandler($email, $firstname, $lastname, $password);
-    //redirecting after registering a user
-    header("location: Login.php");
-    die;
+      $email = trim($_POST["email"]);
+      //Trying to check if an email is already existing
+      if (checkForExisitingEmailHandler($email)){
+        $email_err = "This email is already taken.";
+        //die;
+      } else{
+        $email = trim($_POST["email"]);
+        //die;
+        if(strlen(trim($_POST["password"])) < 6){
+          //password must be specific length
+          $password_err = "Password must have atleast 6 characters.";
+        } else{
+          $password = trim($_POST["password"]);
+          //If everyhing is correct we create the user
+          createUserHandler($email, $firstname, $lastname, $password);
+          //redirecting after registering a user
+          header("location: Login.php");
+          //die;
+        }
+      }
+    // //If everyhing is correct we create the user
+    // createUserHandler($email, $firstname, $lastname, $password);
+    // //redirecting after registering a user
+    // header("location: Login.php");
   }
 
 

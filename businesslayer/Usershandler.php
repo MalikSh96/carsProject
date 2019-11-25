@@ -61,7 +61,6 @@ function getAllUsersHandler(){
 }
 
 function getUserByEmailHandler($email){
-  var_dump("TEST");
   getUserByEmail($email);
 }
 
@@ -77,6 +76,14 @@ function userLoginHandler($email, $password){
 }
 
 function checkForExisitingEmailHandler($email){
-  checkForExisitingEmail($email);
+  return checkForExisitingEmail($email);
+}
+
+function setAdminRightsHandler($email, $isAdmin){
+  global $conn;
+  $email = mysqli_real_escape_string($conn, $email);
+  $isAdmin2 = $isAdmin;
+  $lastlogin  = date("Y/m/d h:i:s");
+  setAdminRights($email, $isAdmin2, $lastlogin);
 }
 ?>
