@@ -16,8 +16,6 @@ function createUserHandler($email, $firstname, $lastname, $password){
   $password      = mysqli_real_escape_string($conn, $password);
   var_dump($password);
   $lastlogin     = date("Y/m/d h:i:s");
-  //die;
-  //$isAdmin       = mysqli_real_escape_string($conn, $isAdmin);
 
   createUser($email, $firstname, $lastname, $password, $lastlogin);
 }
@@ -54,10 +52,6 @@ function editPasswordHandler($email, $oldPassword, $newPassword){
   $lastlogin    = date("Y/m/d h:i:s");
 
   editPassword($email, $oldPassword2, $newPassword2, $lastlogin);
-}
-
-function getAllUsersHandler(){
-  getAllUsers();
 }
 
 function getUserByEmailHandler($email){

@@ -46,11 +46,6 @@ function deleteCarHandler($serialnumber){
   deleteCar($serialnumber);
 }
 
-function getAllCarsHandler(){
-  //Just a simple getter, no need to have considered sql injection
-  getAllCars();
-}
-
 function returnAllCarsHandler(){
   return returnAllCars();
 }
