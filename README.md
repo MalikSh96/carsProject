@@ -1,7 +1,9 @@
-# Before
+# Announcement/disclaimer
 Support folder is only containing extra frameworks and libraries that I am using for my project.
 I have not developed any of the content in the Support folder, only made use of it for the purpose of learning and developing.
-I take no credit for them :)
+I take no credit for them :) \
+I installed through npm (node package manager) help for using datatables, those I have not used as of now, and so far
+I am not sure if I will use it later, for now it is installed. 
 # carsProject
 THIS PROJECT IS STILL IN ITS EARLY STAGES.
 
