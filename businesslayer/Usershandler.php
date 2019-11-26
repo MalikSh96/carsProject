@@ -76,6 +76,10 @@ function checkForExisitingEmailHandler($email){
   return checkForExisitingEmail($email);
 }
 
+function returnAllUsersHandler(){
+  return returnAllUsers();
+}
+
 function setAdminRightsHandler($email, $isAdmin){
   global $conn;
   $email = mysqli_real_escape_string($conn, $email);

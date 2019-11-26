@@ -114,4 +114,47 @@ include_once 'Db_connection.php';
       }
     }
   }
+
+//function with return
+function returnAllCars(){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  }
+  else{
+    $valueArr = array();
+    $query = "SELECT * FROM information";
+    $result = mysqli_query($conn, $query);
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        //mysqli_fetch_assoc() gets all results
+        //$row becomes and array due to ^
+        // echo "--------------------<br>";
+        // echo $row['design'];
+        // echo "<br>";
+        // echo $row['design_model'];
+        // echo "<br>";
+        // echo $row['fuel'];
+        // echo "<br>";
+        // echo $row['model_year'];
+        // echo "<br>";
+        // echo $row['kilometers'];
+        // echo "<br>";
+        // echo $row['color'];
+        // echo "<br>";
+        // echo $row['steering_type'];
+        // echo "<br>";
+        // echo $row['gear_type'];
+        // echo "<br>";
+        // echo $row['serialnumber'];
+        // echo "<br>";
+        $valueArr[] = $row; //add row to array
+      }
+      return $valueArr;
+    }
+  }
+}
 ?>

@@ -210,6 +210,41 @@ function checkForExisitingEmail($email){
   }
 }
 
+//Function to test return result
+function returnAllUsers(){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  }
+  else{
+    $valueArr = array();
+    $query = "SELECT * FROM cars.users";
+    $result = mysqli_query($conn, $query);
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        //mysqli_fetch_assoc() gets all results
+        //$row becomes and array due to ^
+        echo "--------------------<br>";
+        echo $row['email'];
+        echo "<br>";
+        echo $row['firstname'];
+        echo "<br>";
+        echo $row['lastname'];
+        echo "<br>";
+        echo $row['isAdmin'];
+        echo "<br>";
+        echo $row['lastlogin'];
+        echo "<br>";
+        $valueArr[] = $row; //add row to array
+      }
+      return $valueArr;
+    }
+  }
+}
+
 function userLogin($email, $password, $lastlogin){
   global $conn;
   //$valueArr = array(); //creating the result array
@@ -243,8 +278,8 @@ function userLogin($email, $password, $lastlogin){
           echo "<br>";
           //or returning array
           $valueArr[] = $row; //add row to array
-          return $valueArr;
         }
+        return $valueArr;
       }
     }
   }
