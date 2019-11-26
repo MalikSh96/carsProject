@@ -94,6 +94,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 ?>
 
+<?php $currentPage = 'register'; ?>
 <?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
 
 <!DOCTYPE html>
