@@ -14,16 +14,30 @@
 ?>
 
 <!DOCTYPE html>
+<?php $title = 'Home'; ?>
+<?php $metaTags = 'tag1 tag2'; ?>
+<?php $currentPage = 'index'; ?>
+<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Head.php'); ?>
+
+<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Navbar.php'); ?>
+<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Footer.php'); ?>
+
+<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
 <html>
 <head>
   <title>Cars test</title>
 </head>
 <body>
+  <div>
+    <h3>This is another body to contain different content</h3>
+  </div>
+</body>
+<body>
   <div id="getAllUsers">
     <h3>GET ALL USERS</h3>
     <?php
       //getAllUsershandler();
-      userLoginHandler("malik96sharfo@hotmail.com", "malik2660");
+      //userLoginHandler("malik96sharfo@hotmail.com", "malik2660");
     ?>
   </div>
 
@@ -32,7 +46,7 @@
     <?php
       $email = "malik96sharfo@hotmail.com";
       $mail = checkForExisitingEmailHandler($email);
-      echo $mail;
+      //echo $mail;
       //getUserByEmail($email);
     ?>
   </div>
@@ -196,5 +210,8 @@
       //deleteCarHandler($serialnumber);
      ?>
    </div>
+
+<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Footer.php'); ?>
+
 </body>
 </html>

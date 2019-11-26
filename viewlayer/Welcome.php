@@ -9,6 +9,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 ?>
 
+<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

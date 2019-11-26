@@ -15,14 +15,14 @@ $lastname = "";
 $password = "";
 
 //Use the confirm password later once the entire registration is fixed
-$confirm_password = "";
+//$confirm_password = "";
 
 $email_err = "";
 $firstname_err = "";
 $lastname_err = "";
 $password_err = "";
 
-$confirm_password_err = "";
+//$confirm_password_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -54,9 +54,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
 
   //Validate confirm password
-  if(empty(trim($_POST["confirm_password"]))){
+  /*if(empty(trim($_POST["confirm_password"]))){
       $confirm_password_err = "Please confirm password.";
-  }
+  }*/
 
   //If every form is filled we go down here
   if(empty($email_err) && empty($password_err) && empty($firstname_err)
@@ -93,6 +93,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_close($conn);
 }
 ?>
+
+<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
