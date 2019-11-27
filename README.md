@@ -13,7 +13,10 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Register a user.\
   -Sign in with an existent user.\
   -On index.php you see a table with cars.\
-  -Also a nav bar which is the one that redirects
+  -Also a nav bar which is the one that redirects.\
+  -Made some visual design, so the page looks prettier.\
+  -Fixed pathings so they redirect correctly.\
+  -Once you click on a car from the table, it takes you to another page based on the id of the car you clicked.
   
 # What do we need and where do we want to go
 WILL BE UPDATED AT SOME POINT LATER ON
