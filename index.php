@@ -11,20 +11,14 @@
   IN THAT WAY YOU PRESERVE THE 3 LAYER DESIGN AND PROTECT
   YOUR CODE MORE AND ALSO REMEMBER TO AVOID MYSQL INJECTIONS
   */
-
 ?>
 
 <!DOCTYPE html>
 <?php $title = 'Home'; ?>
 <?php $metaTags = 'tag1 tag2'; ?>
 <?php $currentPage = 'index'; ?>
-<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Head.php'); ?>
-
-<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Navbar.php'); ?>
-<?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Footer.php'); ?>
 
 <?php
-//include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <html>
@@ -78,13 +72,9 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <!--
             USE THE HREF TO REDIRECT TO AN INFORMATION PAGE FOR THE CAR PRESSED ON
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
-            TO SHOW THE ENTIRE INFORMATION TABLE
+            TO SHOW THE ENTIRE INFORMATION TABLE.
           -->
           <a href= "viewlayer\cars\Carinformation.php?id=<?php echo $data[$i]['id']; ?>">
-            <!--
-              APPEND THE ID OF THE SPECIFIC CAR PRESSED TO THE END
-              OF THE HREF URL ABOVE
-            -->
             <?php echo $data[$i]['design']; ?>
           </a>
         </td>
@@ -121,7 +111,6 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
   <?php
   }
   ?>
-
   </div>
 </body>
 </html>

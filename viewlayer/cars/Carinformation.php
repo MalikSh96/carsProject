@@ -5,7 +5,6 @@ include('C:\xampp\htdocs\CarsProject\businesslayer\Carshandler.php');
 <html>
 <?php $currentPage = 'Carinformation'; ?>
 <?php
-//include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <head>
@@ -71,16 +70,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
       ?>
       <tr>
 				<td colspan="1">
-          <!--
-            USE THE HREF TO REDIRECT TO AN INFORMATION PAGE FOR THE CAR PRESSED ON
-            BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
-            TO SHOW THE ENTIRE INFORMATION TABLE
-          -->
           <a>
-            <!--
-              APPEND THE ID OF THE SPECIFIC CAR PRESSED TO THE END
-              OF THE HREF URL ABOVE
-            -->
             <?php echo $data[$i]['design']; ?>
           </a>
         </td>
