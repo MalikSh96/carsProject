@@ -22,13 +22,7 @@
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <html>
-<head>
-  <title>Cars test</title>
-</head>
 <body>
-  <div>
-    <h3>This is another body to contain different content</h3>
-  </div>
     <?php
       //We get all data here
       /*
@@ -49,16 +43,8 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
         <tr>
           <th style="width: 25%">Design</th>
           <th>Design model</th>
-          <th>Fuel</th>
           <th>Model year</th>
-          <th>Kilometers</th>
           <th>Color</th>
-          <th>Steering type</th>
-          <th>Gear type</th>
-          <th>WILL GET FILLED WITH MORE LATER</th>
-          <!--<th></th>
-          <th></th>
-          <th></th>-->
         </tr>
       </thead>
     <tbody>
@@ -82,26 +68,11 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <?php echo $data[$i]['design_model']; ?>
 				</td>
 				<td>
-          <?php echo $data[$i]['fuel']; ?>
-				</td>
-				<td>
           <?php echo $data[$i]['model_year']; ?>
-        </td>
-				<td>
-          <?php echo $data[$i]['kilometers']; ?>
         </td>
 				<td>
           <?php echo $data[$i]['color']; ?>
         </td>
-				<td>
-          <?php echo $data[$i]['steering_type']; ?>
-        </td>
-				<td>
-          <?php echo $data[$i]['gear_type']; ?>
-				</td>
-				<td>
-          <?php //Fill with more data ?>
-				</td>
 			</tr>
       <?php
         }

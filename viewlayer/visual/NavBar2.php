@@ -10,7 +10,8 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: #333;
+  /* background-color: #333; */
+  background-color: orange;
 }
 
 .topnav a {
@@ -23,8 +24,9 @@ body {
 }
 
 .topnav a:hover {
-  background-color: #ddd;
-  color: black;
+  /*background-color: #ddd;*/
+  background-color: black;
+  color: white;
 }
 
 .topnav a.active {

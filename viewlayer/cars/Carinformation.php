@@ -27,7 +27,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
   <?php
     //Link: https://css-tricks.com/snippets/javascript/go-back-button/
     $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-    echo "<a href='$url'>back</a>";
+    echo "<a href='$url'>Back</a>";
     ?>
 
     <?php
@@ -70,9 +70,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
       ?>
       <tr>
 				<td colspan="1">
-          <a>
-            <?php echo $data[$i]['design']; ?>
-          </a>
+          <?php echo $data[$i]['design']; ?>
         </td>
 				<td>
           <?php echo $data[$i]['design_model']; ?>
