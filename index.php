@@ -82,7 +82,11 @@
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
             TO SHOW THE ENTIRE INFORMATION TABLE
           -->
-          <a href="">
+          <a href= "viewlayer\cars\Carinformation.php">
+            <!--
+              APPEND THE ID OF THE SPECIFIC CAR PRESSED TO THE END
+              OF THE HREF URL ABOVE
+            -->
             <?php echo $data[$i]['design']; ?>
           </a>
         </td>
