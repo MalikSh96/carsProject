@@ -11,9 +11,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <?php $currentPage = 'Welcome'; ?>
 <?php
-//include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
 include('C:\xampp\htdocs\CarsProject\index.php');
-//include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
