@@ -1,5 +1,6 @@
 <?php
-include_once 'Db_connection.php';
+//include_once 'Db_connection.php';
+include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
   function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
     global $conn; //using global before $conn to make this function awaare to access the connection
@@ -112,6 +113,42 @@ function returnAllCars(){
         // echo "<br>";
         // echo $row['serialnumber'];
         // echo "<br>";
+        $valueArr[] = $row; //add row to array
+      }
+      return $valueArr;
+    }
+  }
+}
+
+function getCarById($id){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  } else{
+    $valueArr = array();
+
+    $query = "SELECT * FROM cars.information where id = '$id'";
+
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+
+    $resultCheck = mysqli_num_rows($result); //checks for data
+
+    if($resultCheck > 0){
+      while($row = mysqli_fetch_assoc($result)){
+        // echo "<br>";
+        // echo "User found by email: <br>";
+        // echo $row['email'];
+        // echo "<br>";
+        // echo $row['firstname'];
+        // echo "<br>";
+        // echo $row['lastname'];
+        // echo "<br>";
+        // echo $row['password'];
+        // echo "<br>";
+        // echo $row['isAdmin'];
+        // echo "<br>";
+        // echo $row['lastlogin'];
         $valueArr[] = $row; //add row to array
       }
       return $valueArr;

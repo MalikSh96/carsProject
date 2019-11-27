@@ -10,17 +10,16 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 ?>
 
 <?php $currentPage = 'Welcome'; ?>
-<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
-
+<?php
+//include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
+include('C:\xampp\htdocs\CarsProject\index.php');
+//include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; text-align: center; }
-    </style>
 </head>
 <body>
     <div class="page-header">

@@ -1,7 +1,9 @@
 <?php
-//This file is used to preserve the 3-layer architecture and avoiding sql injections
+/*//This file is used to preserve the 3-layer architecture and avoiding sql injections
 include('datalayer\carmapper.php');
-include_once 'datalayer\Db_connection.php';
+include_once 'datalayer\Db_connection.php';*/
+include('C:\xampp\htdocs\CarsProject\datalayer\carmapper.php');
+include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
 //Links used
 //https://www.php.net/manual/en/mysqli.real-escape-string.php
@@ -48,5 +50,9 @@ function deleteCarHandler($serialnumber){
 
 function returnAllCarsHandler(){
   return returnAllCars();
+}
+
+function getCarByIdHandler($id){
+  return getCarById($id);
 }
 ?>

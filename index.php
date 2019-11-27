@@ -23,7 +23,10 @@
 <?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Navbar.php'); ?>
 <?php //include('C:\xampp\htdocs\CarsProject\viewlayer\visual\Footer.php'); ?>
 
-<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
+<?php
+//include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
+include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+?>
 <html>
 <head>
   <title>Cars test</title>
@@ -32,11 +35,6 @@
   <div>
     <h3>This is another body to contain different content</h3>
   </div>
-    <style>
-      table, th, td {
-        border: 1px solid black;
-      }
-    </style>
     <?php
       //We get all data here
       /*
@@ -82,7 +80,7 @@
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
             TO SHOW THE ENTIRE INFORMATION TABLE
           -->
-          <a href= "viewlayer\cars\Carinformation.php">
+          <a href= "viewlayer\cars\Carinformation.php?id=<?php echo $data[$i]['id']; ?>">
             <!--
               APPEND THE ID OF THE SPECIFIC CAR PRESSED TO THE END
               OF THE HREF URL ABOVE
@@ -106,7 +104,7 @@
           <?php echo $data[$i]['color']; ?>
         </td>
 				<td>
-          <?php echo $data[0]['steering_type']; ?>
+          <?php echo $data[$i]['steering_type']; ?>
         </td>
 				<td>
           <?php echo $data[$i]['gear_type']; ?>
