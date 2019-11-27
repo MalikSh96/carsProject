@@ -15,7 +15,7 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -On index.php you see a table with cars.\
   -Also a nav bar which is the one that redirects.\
   -Made some visual design, so the page looks prettier.\
-  -Fixed pathings so they redirect correctly.\
+  -Fixed pathings so they redirect correctly.
   
 # What do we need and where do we want to go
 WILL BE UPDATED AT SOME POINT LATER ON
