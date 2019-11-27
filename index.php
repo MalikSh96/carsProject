@@ -22,9 +22,6 @@
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <html>
-<head>
-  <title>Cars test</title>
-</head>
 <body>
     <?php
       //We get all data here
@@ -48,10 +45,6 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <th>Design model</th>
           <th>Model year</th>
           <th>Color</th>
-          <th>WILL GET FILLED WITH MORE LATER</th>
-          <!--<th></th>
-          <th></th>
-          <th></th>-->
         </tr>
       </thead>
     <tbody>
@@ -80,9 +73,6 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 				<td>
           <?php echo $data[$i]['color']; ?>
         </td>
-				<td>
-          <?php //Fill with more data ?>
-				</td>
 			</tr>
       <?php
         }
