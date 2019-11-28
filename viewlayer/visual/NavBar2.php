@@ -46,7 +46,8 @@ body {
     'Login'           => '\CarsProject\viewlayer\Login.php',
     'About Us'        => '\CarsProject\viewlayer\theCompany\AboutUs.php',
     'Contact Us'      => '\CarsProject\viewlayer\theCompany\ContactUs.php',
-    'Register a car'  => '\CarsProject\viewlayer\adminrelated\CreateCar.php'
+    'Register a car'  => '\CarsProject\viewlayer\adminrelated\CreateCar.php',
+    'Delete a car'    => '\CarsProject\viewlayer\adminrelated\DeleteCar.php'
     //If you need more pages add here
   );
   foreach ($urls as $name => $url) {

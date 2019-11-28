@@ -73,6 +73,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
       echo "CONNECTED -- executing task <br>";
       $query = "DELETE FROM information WHERE serialnumber = '$serialnumber'";
       var_dump($query);
+      //die;
       mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     }
   }

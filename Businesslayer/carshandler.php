@@ -44,7 +44,6 @@ function updateCarHandler($design, $design_model, $fuel, $model_year, $kilometer
 function deleteCarHandler($serialnumber){
   global $conn;
   $serialnumber = mysqli_real_escape_string($conn, $serialnumber);
-
   deleteCar($serialnumber);
 }
 
