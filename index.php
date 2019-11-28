@@ -73,6 +73,7 @@ $(document).ready( function () {
           <th>Model year</th>
           <th>Color</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
     <tbody>
@@ -105,6 +106,11 @@ $(document).ready( function () {
           <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->
           <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
             <button class="button button2">Delete</button>
+          </form>
+        </td>
+        <td>
+          <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
+            <button class="button button2">Edit</button>
           </form>
         </td>
 			</tr>

@@ -25,7 +25,7 @@ function createCarHandler($design, $design_model, $fuel, $model_year, $kilometer
   createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
 }
 
-function updateCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
+function updateCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber){
   global $conn;
   $design         = mysqli_real_escape_string($conn, $design);
   $design_model   = mysqli_real_escape_string($conn, $design_model);

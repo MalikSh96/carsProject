@@ -79,6 +79,7 @@ $(document).ready( function () {
           <th>Model year</th>
           <th>Color</th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
     <tbody>
@@ -110,6 +111,11 @@ $(document).ready( function () {
         <td>
           <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
             <button class="button button2">Delete</button>
+          </form>
+        </td>
+        <td>
+          <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
+            <button class="button button2">Edit</button>
           </form>
         </td>
 			</tr>
