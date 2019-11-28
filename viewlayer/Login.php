@@ -12,8 +12,16 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+    && $_SESSION["isAdmin"] == 1)
+{
     header("location: Welcome.php");
+    exit;
+}
+elseif(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+    && $_SESSION["isAdmin"] == 0)
+{
+    header("location: WelcomeUser.php");
     exit;
 }
 
@@ -46,13 +54,41 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       //userLoginHandler is a function that calls another function, which returns a query result
       if(userLoginHandler($email, $password)){
-        session_start();
-        //Store data in session variables
-        $_SESSION["loggedin"] = true;
-        $_SESSION["id"] = $id;
-        $_SESSION["email"] = $email;
-        // Redirect user to welcome page
-        header("location: Welcome.php");
+        /*
+          The logic for if one is a normal user or admin should be done here in
+          this if statement.
+        */
+        $adminIdentifier[] = array();
+        $adminIdentifier = getUserStatusHandler($email, $password);
+        $isAdminConfirmer = $adminIdentifier[0]['isAdmin'];
+        //echo "before var dump<br>";
+        //var_dump($isAdminConfirmer);
+        //echo "<br>";
+        //die;
+        if($isAdminConfirmer != 1){
+          //echo "is not 1";
+          //die;
+          session_start();
+          //Store data in session variables
+          $_SESSION["loggedin"] = true;
+          $_SESSION["id"] = $id;
+          $_SESSION["email"] = $email;
+          $_SESSION["isAdmin"] = $isAdminConfirmer;
+          // Redirect non-admin user to index page
+          header("location: WelcomeUser.php");
+        }
+        else{
+          //echo "is 1";
+          //die;
+          session_start();
+          //Store data in session variables
+          $_SESSION["loggedin"] = true;
+          $_SESSION["id"] = $id;
+          $_SESSION["email"] = $email;
+          $_SESSION["isAdmin"] = $isAdminConfirmer;
+          // Redirect admin user to welcome page
+          header("location: Welcome.php");
+        }
       } else{
         $_SESSION["loggedin"] = false;
         try {

@@ -66,6 +66,14 @@ function userLoginHandler($email, $password){
   return userLogin($email, $password, $lastlogin);
 }
 
+function getUserStatusHandler($email, $password){
+  global $conn;
+  $email      = mysqli_real_escape_string($conn, $email);
+  $password   = $password;
+  $lastlogin  = date("Y/m/d h:i:s");
+  return getUserStatus($email, $password, $lastlogin);
+}
+
 function checkForExisitingEmailHandler($email){
   return checkForExisitingEmail($email);
 }

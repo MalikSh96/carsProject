@@ -24,7 +24,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 
-<?php $currentPage = 'WelcomeAdmin'; ?>
+<?php $currentPage = 'WelcomeUser'; ?>
 <?php
 //include('C:\xampp\htdocs\CarsProject\index.php');
 ?>
@@ -52,9 +52,9 @@ $(document).ready( function () {
 } );
 </script>
 
-<form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
+<!--<form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
   <button class="button button1">Register a car</button>
-</form>
+</form>-->
 <body>
     <?php
       //We get all data here
@@ -78,8 +78,8 @@ $(document).ready( function () {
           <th>Design model</th>
           <th>Model year</th>
           <th>Color</th>
-          <th></th>
-          <th></th>
+          <!--<th></th>
+          <th></th>-->
         </tr>
       </thead>
     <tbody>
@@ -108,7 +108,7 @@ $(document).ready( function () {
 				<td>
           <?php echo $data[$i]['color']; ?>
         </td>
-        <td>
+        <!--<td>
           <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
             <button class="button button2">Delete</button>
           </form>
@@ -117,7 +117,7 @@ $(document).ready( function () {
           <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
             <button class="button button2">Edit</button>
           </form>
-        </td>
+        </td>-->
 			</tr>
       <?php
         }

@@ -227,7 +227,7 @@ function userLogin($email, $password, $lastlogin){
     $resultPassword = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
     $resultCheckPassword = mysqli_fetch_assoc($resultPassword); //is here returning the hashed password from the database
     $pwd = $resultCheckPassword['password']; //<-- hashed database pwd
-    $query = "SELECT id, email, firstname, lastname, password FROM cars.users where email = '$email' and password = '$pwd'";
+    $query = "SELECT id, email, firstname, lastname, password, isAdmin FROM cars.users where email = '$email' and password = '$pwd'";
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     $resultCheck = mysqli_num_rows($result); //checks for data
     if(password_verify($password, $pwd)){
@@ -236,16 +236,18 @@ function userLogin($email, $password, $lastlogin){
         //return $result;
         //While loop might not be needed if you just return the $result
         while($row = mysqli_fetch_assoc($result)){
-          echo "<br>";
-          echo "User login accepted: <br>";
-          echo $row['id'];
-          echo "<br>";
-          echo $row['email'];
-          echo "<br>";
-          echo $row['firstname'] . " " . $row['lastname'];;
-          echo "<br>";
-          echo $row['password'];
-          echo "<br>";
+          // echo "<br>";
+          // echo "User login accepted: <br>";
+          // echo $row['id'];
+          // echo "<br>";
+          // echo $row['email'];
+          // echo "<br>";
+          // echo $row['firstname'] . " " . $row['lastname'];;
+          // echo "<br>";
+          // echo $row['password'];
+          // echo "<br>";
+          // echo $row['isAdmin'];
+          // echo "<br>";
           //or returning array
           $valueArr[] = $row; //add row to array
         }
@@ -276,6 +278,41 @@ function setAdminRights($email, $isAdmin, $lastlogin){
     var_dump($query);
     //die;
     mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+  }
+}
+
+function getUserStatus($email, $password, $lastlogin){
+  global $conn;
+  //$valueArr = array(); //creating the result array
+  if(!$conn){
+    echo "NOT CONNECTED";
+  }
+  else{
+    $valueArr = array();
+    $getDatabasePass = "SELECT password FROM cars.users WHERE email = '$email'";
+    $resultPassword = mysqli_query($conn, $getDatabasePass) or trigger_error(mysqli_error($conn) . " in " . $getDatabasePass);
+    $resultCheckPassword = mysqli_fetch_assoc($resultPassword); //is here returning the hashed password from the database
+    $pwd = $resultCheckPassword['password']; //<-- hashed database pwd
+    $query = "SELECT email, isAdmin FROM cars.users where email = '$email' and password = '$pwd'";
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+    $resultCheck = mysqli_num_rows($result); //checks for data
+    if(password_verify($password, $pwd)){
+      if($resultCheck > 0){
+        var_dump("IF");
+        //return $result;
+        //While loop might not be needed if you just return the $result
+        while($row = mysqli_fetch_assoc($result)){
+          echo "<br>";
+          echo $row['email'];
+          echo "<br>";
+          echo $row['isAdmin'];
+          echo "<br>";
+          //or returning array
+          $valueArr[] = $row; //add row to array
+        }
+        return $valueArr;
+      }
+    }
   }
 }
 ?>
