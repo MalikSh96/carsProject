@@ -34,6 +34,24 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
+<head>
+  <!--Link used: https://www.webslesson.info/2016/10/datatables-jquery-plugin-with-php-mysql-and-bootstrap.html-->
+  <!--DATATABLES RELATED-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+</head>
+<script>
+$(document).ready( function () {
+    $('#datatable').DataTable({
+      "lengthMenu": [ [10, 25, 50, -1], [10, 25, 50, "All"] ],
+      "paging": true, //<--is per default true, so you don't have to set it really
+    });
+} );
+</script>
+
 <form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
   <button class="button button1">Register a car</button>
 </form>
