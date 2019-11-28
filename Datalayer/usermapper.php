@@ -236,7 +236,6 @@ function userLogin($email, $password, $lastlogin){
 
     $loginquery = "UPDATE users SET lastlogin = '$lastlogin'
               WHERE email = '$email'";
-    var_dump($loginquery);
     //die;
     mysqli_query($conn, $loginquery) or trigger_error(mysqli_error($conn) . " in " . $loginquery);
     $resultCheck = mysqli_num_rows($result); //checks for data
