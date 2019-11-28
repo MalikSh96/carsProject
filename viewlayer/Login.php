@@ -31,6 +31,9 @@ $email = "";
 $password = "";
 $email_err = "";
 $password_err = "";
+$lastlogin  = date("Y/m/d h:i:s");
+//var_dump($lastlogin);
+//die;
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -53,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($email_err) && empty($password_err)){
 
       //userLoginHandler is a function that calls another function, which returns a query result
-      if(userLoginHandler($email, $password)){
+      if(userLoginHandler($email, $password, $lastlogin)){
         /*
           The logic for if one is a normal user or admin should be done here in
           this if statement.

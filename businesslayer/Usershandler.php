@@ -58,7 +58,7 @@ function getUserByEmailHandler($email){
   return getUserByEmail($email);
 }
 
-function userLoginHandler($email, $password){
+function userLoginHandler($email, $password, $lastlogin){
   global $conn;
   $email      = mysqli_real_escape_string($conn, $email);
   $password   = $password;

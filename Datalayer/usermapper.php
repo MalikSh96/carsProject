@@ -233,6 +233,12 @@ function userLogin($email, $password, $lastlogin){
     $pwd = $resultCheckPassword['password']; //<-- hashed database pwd
     $query = "SELECT id, email, firstname, lastname, password, isAdmin FROM cars.users where email = '$email' and password = '$pwd'";
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+
+    $loginquery = "UPDATE users SET lastlogin = '$lastlogin'
+              WHERE email = '$email'";
+    var_dump($loginquery);
+    //die;
+    mysqli_query($conn, $loginquery) or trigger_error(mysqli_error($conn) . " in " . $loginquery);
     $resultCheck = mysqli_num_rows($result); //checks for data
     if(password_verify($password, $pwd)){
       if($resultCheck > 0){
