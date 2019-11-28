@@ -1,29 +1,19 @@
 <!DOCTYPE>
 <?php
-include('C:\xampp\htdocs\CarsProject\businesslayer\Carshandler.php');
+include('C:\xampp\htdocs\CarsProject\businesslayer\Usershandler.php');
 ?>
 <html>
-<?php $currentPage = 'Carinformation'; ?>
+<?php $currentPage = 'Userinformation'; ?>
 <?php
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php');
 ?>
 <head>
   <div>
     <p>
-      Here is the car information.
+      Here is the user information.
     </p>
   </div>
 
-  <!--<button onclick="goBack()">Go Back</button>-->
-  <!--<script>
-    function goBack() {
-      //Link: https://www.w3schools.com/jsref/met_his_back.asp
-      //Return function to the previous page
-      window.history.back();
-    }
-  </script>-->
-
-  <!--OR YOU CAN USE THE VERSION BELOW-->
   <?php
     //Link: https://css-tricks.com/snippets/javascript/go-back-button/
     $url = htmlspecialchars($_SERVER['HTTP_REFERER']);
@@ -39,7 +29,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
       //initializing our variable that will contain the data
       $data[] = array();
       //we assign the array to our function which returns an array
-      $data = getCarByIdHandler($_GET['id']);
+      $data = getUserByEmailHandler($_GET['id']);
       //After we get the size of the array, so that we can loop through it for filling the data
       $datacount = count($data);
       if($datacount > 0)
@@ -48,18 +38,13 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
     <table id="datatable" class="table table-hover" align="center">
       <thead>
         <tr>
-          <th style="width: 25%">Design</th>
-          <th>Design model</th>
-          <th>Fuel</th>
-          <th>Model year</th>
-          <th>Kilometers</th>
-          <th>Color</th>
-          <th>Steering type</th>
-          <th>Gear type</th>
-          <th>WILL GET FILLED WITH MORE LATER</th>
-          <!--<th></th>
-          <th></th>
-          <th></th>-->
+          <th style="width: 25%">Id</th>
+          <th>Email</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Password</th>
+          <th>Last login</th>
+          <th>Admin status</th>
         </tr>
       </thead>
     <tbody>
@@ -70,32 +55,26 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
       ?>
       <tr>
 				<td colspan="1">
-          <?php echo $data[$i]['design']; ?>
+          <?php echo $data[$i]['id']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['design_model']; ?>
+          <?php echo $data[$i]['email']; ?>
 				</td>
 				<td>
-          <?php echo $data[$i]['fuel']; ?>
+          <?php echo $data[$i]['firstname']; ?>
 				</td>
 				<td>
-          <?php echo $data[$i]['model_year']; ?>
+          <?php echo $data[$i]['lastname']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['kilometers']; ?>
+          <?php echo $data[$i]['password']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['color']; ?>
+          <?php echo $data[$i]['lastlogin']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['steering_type']; ?>
+          <?php echo $data[$i]['isAdmin']; ?>
         </td>
-				<td>
-          <?php echo $data[$i]['gear_type']; ?>
-				</td>
-				<td>
-          <?php //Fill with more data ?>
-				</td>
 			</tr>
       <?php
         }

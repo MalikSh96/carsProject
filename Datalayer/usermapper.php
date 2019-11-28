@@ -127,11 +127,13 @@ function editPassword($email, $oldPassword, $newPassword, $lastlogin){
 }
 
 function getUserByEmail($email){
-  global $conn;
-  if(!$conn){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
     echo "NOT CONNECTED";
-  }
-  else{
+  } else{
+    $valueArr = array();
+
     $query = "SELECT * FROM cars.users where email = '$email'";
 
     $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
@@ -140,20 +142,22 @@ function getUserByEmail($email){
 
     if($resultCheck > 0){
       while($row = mysqli_fetch_assoc($result)){
-        echo "<br>";
-        echo "User found by email: <br>";
-        echo $row['email'];
-        echo "<br>";
-        echo $row['firstname'];
-        echo "<br>";
-        echo $row['lastname'];
-        echo "<br>";
-        echo $row['password'];
-        echo "<br>";
-        echo $row['isAdmin'];
-        echo "<br>";
-        echo $row['lastlogin'];
+        // echo "<br>";
+        // echo "User found by email: <br>";
+        // echo $row['email'];
+        // echo "<br>";
+        // echo $row['firstname'];
+        // echo "<br>";
+        // echo $row['lastname'];
+        // echo "<br>";
+        // echo $row['password'];
+        // echo "<br>";
+        // echo $row['isAdmin'];
+        // echo "<br>";
+        // echo $row['lastlogin'];
+        $valueArr[] = $row; //add row to array
       }
+      return $valueArr;
     }
   }
 }

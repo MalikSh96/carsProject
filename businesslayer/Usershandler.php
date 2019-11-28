@@ -55,7 +55,7 @@ function editPasswordHandler($email, $oldPassword, $newPassword){
 }
 
 function getUserByEmailHandler($email){
-  getUserByEmail($email);
+  return getUserByEmail($email);
 }
 
 function userLoginHandler($email, $password){
