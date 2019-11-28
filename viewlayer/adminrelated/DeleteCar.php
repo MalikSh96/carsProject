@@ -63,8 +63,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 ?>
 <body>
     <div class="wrapper">
-        <h2>Delete car from collection</h2>
-        <p>Please fill in the information required.</p>
+        <h2>Remove this car from the collection</h2>
+        <p>Please fill in the information required to remove this specific car.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($serialnumber_err)) ? 'has-error' : ''; ?>">
                 <label>Serialnumber</label>

@@ -34,6 +34,9 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
     <meta charset="UTF-8">
     <title>Welcome</title>
 </head>
+<form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
+  <button class="button button1">Register a car</button>
+</form>
 <body>
     <?php
       //We get all data here
@@ -57,6 +60,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <th>Design model</th>
           <th>Model year</th>
           <th>Color</th>
+          <th></th>
         </tr>
       </thead>
     <tbody>
@@ -84,6 +88,11 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
         </td>
 				<td>
           <?php echo $data[$i]['color']; ?>
+        </td>
+        <td>
+          <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
+            <button class="button button2">Delete</button>
+          </form>
         </td>
 			</tr>
       <?php

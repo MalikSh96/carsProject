@@ -22,6 +22,9 @@
 include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <html>
+<form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
+  <button class="button button1">Register a car</button>
+</form>
 <body>
     <?php
       //We get all data here
@@ -45,6 +48,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <th>Design model</th>
           <th>Model year</th>
           <th>Color</th>
+          <th></th>
         </tr>
       </thead>
     <tbody>
@@ -72,6 +76,12 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
         </td>
 				<td>
           <?php echo $data[$i]['color']; ?>
+        </td>
+        <td>
+          <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->
+          <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
+            <button class="button button2">Delete</button>
+          </form>
         </td>
 			</tr>
       <?php
