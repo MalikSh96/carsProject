@@ -19,7 +19,8 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Once you click on a car from the table, it takes you to another page based on the id of the car you clicked.\
   -Made it possible to register a car, for now anyone can register a car -> this will get changed later to only admin rights feature.\
   -Made it possible to remove a car based on its serialnumber, so if the serialnumber exists in the database it gets removed.\
-  -Made it possible to edit a car based on its serialnumber --> for now you have to refill all the information about the car again.
+  -Made it possible to edit a car based on its serialnumber --> for now you have to refill all the information about the car again.\
+  -When you log in as an admin you get an extra functionality where you can see all users who is registered.
 
 # What do we need and where do we want to go
 WILL BE UPDATED AT SOME POINT LATER ON
