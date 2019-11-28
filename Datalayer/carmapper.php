@@ -155,4 +155,26 @@ function getCarById($id){
     }
   }
 }
+
+function checkForExisitingCar($serialnumber){
+  global $conn;
+  if(!$conn){
+    echo "NOT CONNECTED";
+  }
+  else{
+    $query = "SELECT serialnumber FROM cars.information where serialnumber = '$serialnumber'";
+    $result = mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+    $serialnumber = "";
+    $resultCheck = mysqli_num_rows($result); //checks for data
+    if($resultCheck === 1){
+      $serialnumberGet = mysqli_fetch_assoc($result);
+      $serialnumber = $serialnumberGet['serialnumber'];
+      return $serialnumber;
+    } else{
+      $serialnumberGet = mysqli_fetch_assoc($result);
+      $serialnumber = $serialnumberGet['serialnumber'];
+      return $serialnumber;
+    }
+  }
+}
 ?>

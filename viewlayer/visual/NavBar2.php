@@ -41,11 +41,12 @@ body {
   <?php
   // Define each name associated with an URL
   $urls = array(
-    'Home'        => '\CarsProject\index.php',
-    'Register'    => '\CarsProject\viewlayer\Register.php',
-    'Login'       => '\CarsProject\viewlayer\Login.php',
-    'About Us'    => '\CarsProject\viewlayer\theCompany\AboutUs.php',
-    'Contact Us'  => '\CarsProject\viewlayer\theCompany\ContactUs.php'
+    'Home'            => '\CarsProject\index.php',
+    'Register'        => '\CarsProject\viewlayer\Register.php',
+    'Login'           => '\CarsProject\viewlayer\Login.php',
+    'About Us'        => '\CarsProject\viewlayer\theCompany\AboutUs.php',
+    'Contact Us'      => '\CarsProject\viewlayer\theCompany\ContactUs.php',
+    'Register a car'  => '\CarsProject\viewlayer\adminrelated\CreateCar.php'
     //If you need more pages add here
   );
   foreach ($urls as $name => $url) {
