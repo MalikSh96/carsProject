@@ -3,7 +3,7 @@ Support folder is only containing extra frameworks and libraries that I am using
 I have not developed any of the content in the Support folder, only made use of it for the purpose of learning and developing.
 I take no credit for them :) \
 I installed through npm (node package manager) help for using datatables, those I have not used as of now, and so far
-I am not sure if I will use it later, for now it is installed. 
+I am not sure if I will use it later, for now it is installed.
 # carsProject
 THIS PROJECT IS STILL IN ITS EARLY STAGES.
 
@@ -16,7 +16,8 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Also a nav bar which is the one that redirects.\
   -Made some visual design, so the page looks prettier.\
   -Fixed pathings so they redirect correctly.\
-  -Once you click on a car from the table, it takes you to another page based on the id of the car you clicked.
-  
+  -Once you click on a car from the table, it takes you to another page based on the id of the car you clicked.\
+  -Made it possible to register a car, for now anyone can register a car -> this will get changed later to only admin rights feature-
+
 # What do we need and where do we want to go
 WILL BE UPDATED AT SOME POINT LATER ON
