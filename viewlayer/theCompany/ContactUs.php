@@ -2,7 +2,7 @@
 <html>
 <?php $currentPage = 'ContactUs'; ?>
 <?php
-  include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php');
+  include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
   include('C:\xampp\htdocs\CarsProject\viewlayer\ReturnBack.php');
 ?>
 <head>

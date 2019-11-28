@@ -1,7 +1,7 @@
 <!DOCTYPE>
 <html>
 <?php $currentPage = 'AboutUs'; ?>
-<?php include('C:\xampp\htdocs\CarsProject\viewlayer\visual\NavBar2.php'); ?>
+<?php include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php'); ?>
 <head>
   <title>About us</title>
   <?php
