@@ -29,16 +29,16 @@ if($datacount > 0)
   {
     $rssfeed .= '<item>';
     $rssfeed .= '<title>' . $dataextracter[$i]['design'] . '</title>';
-    $rssfeed .= '<description>' . $dataextracter[$i]['id']
-                . $dataextracter[$i]['design_model'] . ", "
-                . $dataextracter[$i]['fuel'] . ", "
-                . $dataextracter[$i]['model_year'] . ", "
-                . $dataextracter[$i]['kilometers'] . ", "
-                . $dataextracter[$i]['color'] . ", "
-                . $dataextracter[$i]['steering_type'] . ", "
-                . $dataextracter[$i]['gear_type'] . ", "
-                . $dataextracter[$i]['serialnumber'] . ", "
-                . $dataextracter[$i]['updated']
+    $rssfeed .= '<description>' . "ID: " . $dataextracter[$i]['id'] . " --- "
+                . "Design model: " . $dataextracter[$i]['design_model'] . " --- "
+                . "Fuel type: " . $dataextracter[$i]['fuel'] . " --- "
+                . "Model year: " . $dataextracter[$i]['model_year'] . " --- "
+                . "Kilometers driven: " . $dataextracter[$i]['kilometers'] . " --- "
+                . "Color: " . $dataextracter[$i]['color'] . " --- "
+                . "Steering type: " . $dataextracter[$i]['steering_type'] . " --- "
+                . "Gear type: " . $dataextracter[$i]['gear_type'] . " --- "
+                . "Serialnumber: " . $dataextracter[$i]['serialnumber'] . " --- "
+                . "Last updated: " . $dataextracter[$i]['updated']
                 . '</description>';
     $rssfeed .= '</item>';
   }
