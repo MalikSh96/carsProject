@@ -23,7 +23,8 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Made it possible to edit a car based on its serialnumber --> for now you have to refill all the information about the car again.\
   -When you log in as an admin you get an extra functionality where you can see all users who is registered.\
   -Made it possible to remove a user based on the users email, so if the user exists in the database the user gets removed.\
-  -Made it possible to generate a RSS file that contains all data for the cars, according to https://validator.w3.org/feed/check.cgi my RSS setup is correct.\
+  -Made it possible to generate RSS that contains all data for the cars --> This does not get stored anywhere as of now. According to https://validator.w3.org/feed/check.cgi my RSS setup is correct.\
+  -Made it possible for the admin(s) to generate/update their XML file --> Gets saved in the directory.
 
 # What do we need and where do we want to go
 WILL BE UPDATED AT SOME POINT LATER ON
