@@ -27,12 +27,20 @@ if($datacount > 0)
 {
   for ($i = 0; $i < $datacount; $i++)
   {
-    $rssfeed .= '<car>';
-    $rssfeed .= '<design>' . $dataextracter[$i]['design'] . '</design>';
-    $rssfeed .= '<design_model>' . $dataextracter[$i]['design_model'] . '</design_model>';
-    $rssfeed .= '<model_year>' . $dataextracter[$i]['model_year'] . '</model_year>';
-    $rssfeed .= '<serialnumber>' . $dataextracter[$i]['serialnumber'] . '</serialnumber>';
-    $rssfeed .= '</car>';
+    $rssfeed .= '<item>';
+    $rssfeed .= '<title>' . $dataextracter[$i]['design'] . '</title>';
+    $rssfeed .= '<description>' . $dataextracter[$i]['id']
+                . $dataextracter[$i]['design_model'] . ", "
+                . $dataextracter[$i]['fuel'] . ", "
+                . $dataextracter[$i]['model_year'] . ", "
+                . $dataextracter[$i]['kilometers'] . ", "
+                . $dataextracter[$i]['color'] . ", "
+                . $dataextracter[$i]['steering_type'] . ", "
+                . $dataextracter[$i]['gear_type'] . ", "
+                . $dataextracter[$i]['serialnumber'] . ", "
+                . $dataextracter[$i]['updated']
+                . '</description>';
+    $rssfeed .= '</item>';
   }
 }
 
