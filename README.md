@@ -6,7 +6,7 @@ I installed through npm (node package manager) help for using datatables, those 
 I am not sure if I will use it later, for now it is installed.\
 I have also made use of the "datatables" neat feature.
 # carsProject
-THIS PROJECT IS STILL IN ITS EARLY STAGES PUT HAS BEEN PROGRESSING VERY MUCH.
+THIS PROJECT IS STILL IN ITS EARLY STAGES BUT HAS BEEN PROGRESSING VERY MUCH.
 
 # Where are we so far
 Well so far we are at a point, where there is a lot of backend functionality that is waiting for be used.
