@@ -324,4 +324,19 @@ function getUserStatus($email, $password, $lastlogin){
     }
   }
 }
+
+function deleteUser($email){
+  global $conn; //using global before $conn to make this function awaare to access the connection
+  if(!$conn)
+  {
+    echo "NOT CONNECTED";
+  }
+  else{
+    echo "CONNECTED -- executing task <br>";
+    $query = "DELETE FROM cars.users WHERE email = '$email'";
+    var_dump($query);
+    //die;
+    mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
+  }
+}
 ?>

@@ -29,7 +29,6 @@ $(document).ready( function () {
     });
 } );
 </script>
-  <h3>WORK IN PROGRESS</h3>
   <body>
     <?php
       //We get all data here
@@ -53,8 +52,8 @@ $(document).ready( function () {
           <th>Firstname</th>
           <th>Lastname</th>
           <th>isAdmin</th>
-          <!--<th></th>
-          <th></th>-->
+          <th></th>
+          <!--<th></th>-->
         </tr>
       </thead>
     <tbody>
@@ -83,13 +82,13 @@ $(document).ready( function () {
 				<td>
           <?php echo $data[$i]['isAdmin']; ?>
         </td>
-        <!--<td>
+        <td>
           <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->
-          <!--<form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
+          <form action="\CarsProject\viewlayer\adminrelated\DeleteUser.php">
             <button class="button button2">Delete</button>
           </form>
         </td>
-        <td>
+        <!--<td>
           <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
             <button class="button button2">Edit</button>
           </form>
