@@ -55,6 +55,10 @@ $(document).ready( function () {
 <form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
   <button class="button button1">Register a car</button>
 </form>
+<form action="\CarsProject\feedgeneration\XmlFeedGeneration.php">
+  <button class="button button1">Generate/Update XML feed</button>
+</form>
+
 <body>
     <?php
       //We get all data here

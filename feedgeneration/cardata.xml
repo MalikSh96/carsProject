@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<information>
+  <car>
+    <id>18</id>
+    <design>Volkswagen</design>
+    <designModel>Golf GTI</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2015</modelYear>
+    <kilometers>43500</kilometers>
+    <color>Matte black</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>1234GTI4321</serialnumber>
+    <updated>2019-11-28 11:29:51</updated>
+  </car>
+  <car>
+    <id>23</id>
+    <design>BMW</design>
+    <designModel>M5</designModel>
+    <fuel>Diesel</fuel>
+    <modelYear>2017</modelYear>
+    <kilometers>25000</kilometers>
+    <color>Matte white</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Auto</gearType>
+    <serialnumber>BMWm5</serialnumber>
+    <updated>2019-11-28 01:46:25</updated>
+  </car>
+  <car>
+    <id>25</id>
+    <design>Toyota</design>
+    <designModel>Yaris Hybrid</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2018</modelYear>
+    <kilometers>75000</kilometers>
+    <color>Red</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Auto</gearType>
+    <serialnumber>ToyotaYaris18</serialnumber>
+    <updated>2019-11-28 01:58:04</updated>
+  </car>
+  <car>
+    <id>27</id>
+    <design>Lamborghini</design>
+    <designModel>Aventador</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2016</modelYear>
+    <kilometers>10000</kilometers>
+    <color>Metallic navy blue</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>LamborghiniAventador16</serialnumber>
+    <updated>2019-11-28 02:00:41</updated>
+  </car>
+  <car>
+    <id>28</id>
+    <design>BMW</design>
+    <designModel>X7</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2019</modelYear>
+    <kilometers>24000</kilometers>
+    <color>Golden brush</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Auto</gearType>
+    <serialnumber>BMWx7</serialnumber>
+    <updated>2019-11-28 04:46:42</updated>
+  </car>
+</information>
