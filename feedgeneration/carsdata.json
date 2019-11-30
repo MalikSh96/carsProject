@@ -1,0 +1,69 @@
+{
+    "posts": [
+        {
+            "id": "18",
+            "design": "Volkswagen",
+            "design_model": "Golf GTI",
+            "fuel": "Benzin",
+            "model_year": "2015",
+            "kilometers": "43500",
+            "color": "Matte black",
+            "steeringType": "Servo",
+            "gear_type": "Manual",
+            "serialnumber": "1234GTI4321",
+            "updated": "2019-11-28 11:29:51"
+        },
+        {
+            "id": "23",
+            "design": "BMW",
+            "design_model": "M5",
+            "fuel": "Diesel",
+            "model_year": "2017",
+            "kilometers": "25000",
+            "color": "Matte white",
+            "steeringType": "Servo",
+            "gear_type": "Auto",
+            "serialnumber": "BMWm5",
+            "updated": "2019-11-28 01:46:25"
+        },
+        {
+            "id": "25",
+            "design": "Toyota",
+            "design_model": "Yaris Hybrid",
+            "fuel": "Benzin",
+            "model_year": "2018",
+            "kilometers": "75000",
+            "color": "Red",
+            "steeringType": "Servo",
+            "gear_type": "Auto",
+            "serialnumber": "ToyotaYaris18",
+            "updated": "2019-11-28 01:58:04"
+        },
+        {
+            "id": "27",
+            "design": "Lamborghini",
+            "design_model": "Aventador",
+            "fuel": "Benzin",
+            "model_year": "2016",
+            "kilometers": "10000",
+            "color": "Metallic navy blue",
+            "steeringType": "Servo",
+            "gear_type": "Manual",
+            "serialnumber": "LamborghiniAventador16",
+            "updated": "2019-11-28 02:00:41"
+        },
+        {
+            "id": "28",
+            "design": "BMW",
+            "design_model": "X7",
+            "fuel": "Benzin",
+            "model_year": "2019",
+            "kilometers": "24000",
+            "color": "Golden brush",
+            "steeringType": "Servo",
+            "gear_type": "Auto",
+            "serialnumber": "BMWx7",
+            "updated": "2019-11-28 04:46:42"
+        }
+    ]
+}
