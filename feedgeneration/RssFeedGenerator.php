@@ -48,5 +48,31 @@ if($datacount > 0)
 $rssfeed .= '</channel>';
 $rssfeed .= '</rss>';
 
-echo $rssfeed;
+//To save the rss: https://stackoverflow.com/questions/5592906/how-to-save-rss-feeds/5593020
+if($rssfeed){
+  $fh = fopen('rssfeed.xml', 'w+'); //create new file if not exists
+  fwrite($fh, $rssfeed) or die("Failed to write contents to new rss file"); //write contents to new XML file
+  fclose($fh) or die("failed to close stream resource"); //close resource stream
+} else{
+  die("Failed to read contents of feed");
+}
+
+//echo $rssfeed;
 ?>
+
+<!DOCTYPE>
+<html>
+<?php $currentPage = 'RssFeedGeneration'; ?>
+<?php
+  include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+  include('C:\xampp\htdocs\CarsProject\viewlayer\ReturnBack.php');
+?>
+<head>
+  <title>RSS Feed Generator</title>
+  <div>
+    <h3>
+      Your rss feed has been generated/updated, please check your rssfeed.xml file.
+    </h3>
+  </div>
+</head>
+</html>

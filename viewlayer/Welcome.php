@@ -58,6 +58,9 @@ $(document).ready( function () {
 <form action="\CarsProject\feedgeneration\XmlFeedGeneration.php">
   <button class="button button1">Generate/Update XML feed</button>
 </form>
+<!--<form action="\CarsProject\feedgeneration\RssFeedGenerator.php">
+  <button class="button button1">Generate/Update RSS feed</button>
+</form>-->
 
 <body>
     <?php
