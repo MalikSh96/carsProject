@@ -1,4 +1,4 @@
 # ignore database connection file
-C:\xampp\htdocs\CarsProject\cars_script.sql
-C:\xampp\htdocs\CarsProject\users_script.sql
-C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php
+cars_script.sql
+users_script.sql
+Db_connection.php
