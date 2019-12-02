@@ -28,12 +28,13 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Made it possible for the admin(s) to generate/update their JSON file --> Gets saved in the directory. According to https://jsonformatter.curiousconcept.com/# my JSON setup is correct.\
   -A user can now edit their own information --> As of now it is only possible for the user to edit their firstname and lastname (1).\
   -An admin can set rights to a user --> Issue is you can't set a users role to 0 (2).\
-  -For now you can add ONLY one picture when creating a car (3).
+  -For now you can add ONLY one picture when creating a car (3).\
+  -Once you create a car, a folder gets created named after the serialnumber of the car --> Issue is when you create a car, it takes the corresponding picture to it and puts it in the folder, but the picture is empty (4).
 
 
 # What do we need and where do we want to go
   -Need to fix (1).\
   -Need to fix (2).\
   -Need to fix (3) to add more pictures.\
-  -And when creating a new car, a new folder should get created, based on the serialnumber of the car created, in that way to retrieve the picture for the correct car.\
+  -Need to fix (4).\
   -Need to fix so that when editing information, you don't have to retype all information in order to edit just one field, because as of now when you try to edit one field you need to fill all other fields again in order for it to proceed.
