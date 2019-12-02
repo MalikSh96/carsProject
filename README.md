@@ -25,7 +25,12 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Made it possible to remove a user based on the users email, so if the user exists in the database the user gets removed.\
   -Made it possible to generate RSS that contains all data for the cars --> Gets saved in the directory. According to https://validator.w3.org/feed/ my RSS setup is correct.\
   -Made it possible for the admin(s) to generate/update their XML file --> Gets saved in the directory.\
-  -Made it possible for the admin(s) to generate/update their JSON file --> Gets saved in the directory. According to https://jsonformatter.curiousconcept.com/# my JSON setup is correct.
+  -Made it possible for the admin(s) to generate/update their JSON file --> Gets saved in the directory. According to https://jsonformatter.curiousconcept.com/# my JSON setup is correct.\
+  -A user can now edit their own information --> As of now it is only possible for the user to edit their firstname and lastname (1).\
+  -An admin can set rights to a user --> Issue is you can't set a users role to 0 (2).
 
 # What do we need and where do we want to go
-WILL BE UPDATED AT SOME POINT LATER ON
+  -Need to fix (1).\
+  -Need to fix (2).\
+  -Need to make it possible to add picture(s) into the database about a specific car.\
+  -Need to fix so that when editing information, you don't have to retype all information in order to edit just one field, because as of now when you try to edit one field you need to fill all other fields again in order for it to proceed.
