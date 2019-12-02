@@ -56,6 +56,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
           <th>Color</th>
           <th>Steering type</th>
           <th>Gear type</th>
+          <th>Photo One</th>
           <th>WILL GET FILLED WITH MORE LATER</th>
           <!--<th></th>
           <th></th>
@@ -93,6 +94,11 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
 				<td>
           <?php echo $data[$i]['gear_type']; ?>
 				</td>
+        <td>
+          <!--Used this link to display image: https://stackoverflow.com/questions/23842268/how-to-display-image-from-database-using-php-->
+          <img src="<? $data[$i]['PhotoOne']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+          <?php echo $data[$i]['PhotoOne']; ?>
+        </td>
 				<td>
           <?php //Fill with more data ?>
 				</td>
