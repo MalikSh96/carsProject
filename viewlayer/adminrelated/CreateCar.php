@@ -108,6 +108,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       //If everyhing is correct we register the car
       createCarHandler($design, $design_model, $fuel, $model_year,
                       $kilometers, $color, $steering_type, $gear_type, $serialnumber, $photoOne);
+
+      //Link: https://www.php.net/manual/en/function.mkdir.php
+      //Link: https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code/18217147
+      //Creating a folder that should contain the image path for the specific car
+      $dir = "C:/xampp/htdocs/CarsProject/images/$serialnumber"; //path to directory
+      //$file_to_write = $photoOne; //the photo to be stored in the folder
+
+      //$remote_img = $photoOne;
+      //$img = imagecreatefromjpeg($remote_img);
+
+      if(is_dir($dir) === false)
+      {
+        //Creates the directory
+        mkdir($dir);
+      }
+
+      $link = $photoOne;
+      $destdir = $dir . "/";
+      $img = file_get_contents($link);
+      file_put_contents($destdir.substr($link, strrpos($link,'/')), $img);
+      //imagejpeg($img, 'CarsProject/images/');
+
+      /*$file = fopen($dir . '/' . $file_to_write,"w");
+      //Writing to our file
+      fwrite($file, $file_to_write);
+      // closes the file
+      fclose($file);*/
+
       //redirecting after registering a car
       header("location: \CarsProject\Index.php");
       //die;

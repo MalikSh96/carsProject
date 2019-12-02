@@ -34,7 +34,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     '$serialnumber',
                     '$updated',
                     '$photoOne')";
-      var_dump($query);
+      //var_dump($query);
       //die;
       mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
     }
