@@ -96,8 +96,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
 				</td>
         <td>
           <!--Used this link to display image: https://stackoverflow.com/questions/23842268/how-to-display-image-from-database-using-php-->
-          <img src="<? $data[$i]['PhotoOne']; ?>" alt="" width="100" height="100" class="img-responsive"/>
-          <?php echo $data[$i]['PhotoOne']; ?>
+          <img src="/CarsProject/images/<?php echo $data[$i]['PhotoOne']; ?>" alt="" width="100" height="100" class="img-responsive"/>
         </td>
 				<td>
           <?php //Fill with more data ?>
