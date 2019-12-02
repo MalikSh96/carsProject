@@ -124,6 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         mkdir($dir);
       }
 
+      //https://stackoverflow.com/questions/15117303/saving-image-straight-to-directory-in-php
       $link = $photoOne;
       $destdir = $dir . "/";
       $img = file_get_contents($link);
