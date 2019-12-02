@@ -21,7 +21,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <?php $currentPage = 'index'; ?>
 
 <?php
-include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylinguserloggedin.php');
 ?>
 
 <?php $currentPage = 'WelcomeUser'; ?>

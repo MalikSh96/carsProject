@@ -20,14 +20,14 @@ function createUserHandler($email, $firstname, $lastname, $password){
   createUser($email, $firstname, $lastname, $password, $lastlogin);
 }
 
-function editUserFirstAndLastnameHandler($email, $firstname, $lastname){
+function editUserHandler($email, $firstname, $lastname){
   global $conn;
   $email         = mysqli_real_escape_string($conn, $email);
   $firstname     = mysqli_real_escape_string($conn, $firstname);
   $lastname      = mysqli_real_escape_string($conn, $lastname);
   $lastlogin     = date("Y/m/d h:i:s");
 
-  editUserFirstAndLastname($email, $firstname, $lastname, $lastlogin);
+  editUser($email, $firstname, $lastname, $lastlogin);
 }
 
 function editEmailHandler($oldEmail, $newEmail){
@@ -91,8 +91,8 @@ function returnAllUsersHandler(){
 function setAdminRightsHandler($email, $isAdmin){
   global $conn;
   $email = mysqli_real_escape_string($conn, $email);
-  $isAdmin2 = $isAdmin;
+  $isAdmin = $isAdmin;
   $lastlogin  = date("Y/m/d h:i:s");
-  setAdminRights($email, $isAdmin2, $lastlogin);
+  setAdminRights($email, $isAdmin, $lastlogin);
 }
 ?>

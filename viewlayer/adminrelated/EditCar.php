@@ -1,5 +1,5 @@
 <?php
-//This file is for adding a car to the database
+//This file is for editing a car from the database
 
 include 'C:\xampp\htdocs\CarsProject\businesslayer\carshandler.php';
 

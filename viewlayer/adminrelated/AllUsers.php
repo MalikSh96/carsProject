@@ -88,11 +88,11 @@ $(document).ready( function () {
             <button class="button button2">Delete</button>
           </form>
         </td>
-        <!--<td>
-          <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
+        <td>
+          <form action="\CarsProject\viewlayer\adminrelated\AdminEditUser.php">
             <button class="button button2">Edit</button>
           </form>
-        </td>-->
+        </td>
 			</tr>
       <?php
         }

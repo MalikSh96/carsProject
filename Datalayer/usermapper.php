@@ -51,7 +51,7 @@ function createUser($email, $firstname, $lastname, $password, $lastlogin){
   }
 }
 
-function editUserFirstAndLastname($email, $firstname, $lastname, $lastlogin){
+function editUser($email, $firstname, $lastname, $lastlogin){
   //this function is for non-admin users to edit themself
   global $conn; //using global before $conn to make this function awaare to access the connection
   if(!$conn)
@@ -61,7 +61,8 @@ function editUserFirstAndLastname($email, $firstname, $lastname, $lastlogin){
   else{
     echo "CONNECTED -- executing task <br>";
 
-    $query = "UPDATE users SET firstname = '$firstname',
+    $query = "UPDATE users SET email = '$email',
+              firstname = '$firstname',
               lastname = '$lastname',  lastlogin = '$lastlogin'
               WHERE email = '$email'";
     //var_dump($query);
