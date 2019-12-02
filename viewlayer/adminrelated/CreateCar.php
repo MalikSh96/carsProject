@@ -1,4 +1,5 @@
 <?php
+//Link for uploading a photo: https://www.youtube.com/watch?v=JaRq73y5MJk
 //This file is for adding a car to the database
 
 include 'C:\xampp\htdocs\CarsProject\businesslayer\carshandler.php';
@@ -15,6 +16,7 @@ $color          = "";
 $steering_type  = "";
 $gear_type      = "";
 $serialnumber   = "";
+$photoOne       = "";
 
 $design_err         = "";
 $design_model_err   = "";
@@ -102,10 +104,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
       $serialnumber = trim($_POST["serialnumber"]);
       //die;
-
+      $photoOne = trim($_POST['PhotoOne']);
       //If everyhing is correct we register the car
       createCarHandler($design, $design_model, $fuel, $model_year,
-                      $kilometers, $color, $steering_type, $gear_type, $serialnumber);
+                      $kilometers, $color, $steering_type, $gear_type, $serialnumber, $photoOne);
       //redirecting after registering a car
       header("location: \CarsProject\Index.php");
       //die;
@@ -182,6 +184,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Serialnumber</label>
                 <input type="text" name="serialnumber" class="form-control" value="<?php echo $serialnumber; ?>">
                 <span class="help-block"><?php echo $serialnumber_err; ?></span>
+            </div>
+            <div>
+              <!--<form method="post" enctype="multipart/form-data">-->
+                <label>Picture</label>
+                <input type="file" name="PhotoOne" class="form-control" value="<?php echo $photoOne; ?>">
+              <!--</form>-->
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">

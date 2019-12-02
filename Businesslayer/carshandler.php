@@ -9,7 +9,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 //https://www.php.net/manual/en/mysqli.real-escape-string.php
 //https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
 
-function createCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber){
+function createCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $photoOne){
   global $conn;
   $design         = mysqli_real_escape_string($conn, $design);
   $design_model   = mysqli_real_escape_string($conn, $design_model);
@@ -21,8 +21,10 @@ function createCarHandler($design, $design_model, $fuel, $model_year, $kilometer
   $gear_type      = mysqli_real_escape_string($conn, $gear_type);
   $serialnumber   = mysqli_real_escape_string($conn, $serialnumber);
   $updated        = date("Y/m/d h:i:s");
-
-  createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+  $photoOne       = $photoOne;
+  //var_dump($photoOne);
+  //die;
+  createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated, $photoOne);
 }
 
 function updateCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber){

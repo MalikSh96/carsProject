@@ -2,7 +2,7 @@
 //include_once 'Db_connection.php';
 include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
-  function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
+  function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated, $photoOne){
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
@@ -20,7 +20,8 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     steering_type,
                     gear_type,
                     serialnumber,
-                    updated)
+                    updated,
+                    PhotoOne)
                 VALUES
                     ('$design',
                     '$design_model',
@@ -31,7 +32,8 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     '$steering_type',
                     '$gear_type',
                     '$serialnumber',
-                    '$updated')";
+                    '$updated',
+                    '$photoOne')";
       var_dump($query);
       //die;
       mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);
