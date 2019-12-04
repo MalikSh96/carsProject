@@ -2,7 +2,12 @@
 //include_once 'Db_connection.php';
 include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
-  function createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated, $photoOne){
+  function createCar($design, $design_model, $fuel,
+                      $model_year, $kilometers, $color,
+                        $steering_type, $gear_type, $serialnumber,
+                          $vehicle_inspection_current, $vehicle_inspection_next,
+                          $description, $updated,
+                          $photoOne, $photoTwo, $photoThree, $photoFour, $photoFive){
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
@@ -20,8 +25,15 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     steering_type,
                     gear_type,
                     serialnumber,
+                    vehicle_inspection_current,
+                    vehicle_inspection_next,
+                    description,
                     updated,
-                    PhotoOne)
+                    PhotoOne,
+                    PhotoTwo,
+                    PhotoThree,
+                    PhotoFour,
+                    PhotoFive)
                 VALUES
                     ('$design',
                     '$design_model',
@@ -32,8 +44,15 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     '$steering_type',
                     '$gear_type',
                     '$serialnumber',
+                    '$vehicle_inspection_current',
+                    '$vehicle_inspection_next',
+                    '$description',
                     '$updated',
-                    '$photoOne')";
+                    '$photoOne',
+                    '$photoTwo',
+                    '$photoThree',
+                    '$photoFour',
+                    '$photoFive')";
       //var_dump($query);
       //die;
       mysqli_query($conn, $query) or trigger_error(mysqli_error($conn) . " in " . $query);

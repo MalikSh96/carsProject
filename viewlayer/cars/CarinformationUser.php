@@ -5,7 +5,7 @@ include('C:\xampp\htdocs\CarsProject\businesslayer\Carshandler.php');
 <html>
 <?php $currentPage = 'Carinformation'; ?>
 <?php
-include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php');
+include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 ?>
 <head>
   <div>
@@ -117,7 +117,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php')
                     . $data[$i]['PhotoFour']; ?>" alt="" width="100" height="100" class="img-responsive"/>
 
           <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoFive']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+                    . $data[$i]['PhotoFive']; ?>" alt="" width="100" height="100" class="img-responsive"/>             
           <?php //echo $data[$i]['PhotoOne']; //<-- this just echoes out the name of photo ?>
         </td>
 				<td>

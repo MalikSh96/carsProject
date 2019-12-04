@@ -7,16 +7,27 @@ include 'C:\xampp\htdocs\CarsProject\businesslayer\carshandler.php';
 // Include config file
 include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
-$design         = "";
-$design_model   = "";
-$fuel           = "";
+$design                     = "";
+$design_model               = "";
+$fuel                       = "";
 $model_year;
 $kilometers;
-$color          = "";
-$steering_type  = "";
-$gear_type      = "";
-$serialnumber   = "";
-$photoOne       = "";
+$color                      = "";
+$steering_type              = "";
+$gear_type                  = "";
+$serialnumber               = "";
+
+$vehicle_inspection_current = "";
+$vehicle_inspection_next    = "";
+
+$description                = "";
+
+$photoOne                   = "";
+$photoTwo                   = "";
+$photoThree                 = "";
+$photoFour                  = "";
+$photoFive                  = "";
+
 
 $design_err         = "";
 $design_model_err   = "";
@@ -27,6 +38,8 @@ $color_err          = "";
 $steering_type_err  = "";
 $gear_type_err      = "";
 $serialnumber_err   = "";
+$description_err    = "";
+$vehicle_inspection_current_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -84,6 +97,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $serialnumber_err = "Please enter the serialnumber of the car.";
   }
 
+  if(empty(trim($_POST["description"]))){
+    $description_err = "Please enter a saying description of the car.";
+  } else{
+    $description = trim($_POST["description"]);
+  }
+
+  if(empty(trim($_POST["vehicle_inspection_current"]))){
+    $vehicle_inspection_current_err = "Please enter if the car has been inspected. USE either 1 or 0. \n1 is inspected. \n0 is not inspected";
+  } else{
+    $vehicle_inspection_current = trim($_POST["vehicle_inspection_current"]);
+  }
+
   //If every form is filled we go down here
   if(empty($design_err)
       && empty($design_model_err)
@@ -93,7 +118,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       && empty($color_err)
       && empty($steering_type_err)
       && empty($gear_type_err)
-      && empty($serialnumber_err))
+      && empty($serialnumber_err)
+      && empty($description_err)
+      && empty($vehicle_inspection_current_err))
   {
     // Check input errors before inserting in database
     $serialnumber = trim($_POST['serialnumber']);
@@ -105,9 +132,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $serialnumber = trim($_POST["serialnumber"]);
       //die;
       $photoOne = trim($_POST['PhotoOne']);
+      $photoTwo = trim($_POST['PhotoTwo']);
+      $photoThree = trim($_POST['PhotoThree']);
+      $photoFour = trim($_POST['PhotoFour']);
+      $photoFive = trim($_POST['PhotoFive']);
+
       //If everyhing is correct we register the car
-      createCarHandler($design, $design_model, $fuel, $model_year,
-                      $kilometers, $color, $steering_type, $gear_type, $serialnumber, $photoOne);
+      createCarHandler($design, $design_model, $fuel,
+                                $model_year, $kilometers, $color,
+                                $steering_type, $gear_type, $serialnumber,
+                                $vehicle_inspection_current, $vehicle_inspection_next,
+                                $description, $updated,
+                                $photoOne, $photoTwo, $photoThree, $photoFour, $photoFive);
 
       //Link: https://www.php.net/manual/en/function.mkdir.php
       //Link: https://stackoverflow.com/questions/18216930/how-to-create-folder-with-php-code/18217147
@@ -125,7 +161,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
 
       //https://stackoverflow.com/questions/15117303/saving-image-straight-to-directory-in-php
-      $link = $photoOne;
+      $link = array();
+      $link = [
+        "photoOne" => $photoOne,
+        "photoTwo" => $photoTwo,
+        "photoThree" => $photoThree,
+        "photoFour" => $photoFour,
+        "photoFive" => $photoFive,
+      ];
       $destdir = $dir . "/";
       $img = file_get_contents($link);
       file_put_contents($destdir.substr($link, strrpos($link,'/')), $img);
@@ -214,10 +257,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="serialnumber" class="form-control" value="<?php echo $serialnumber; ?>">
                 <span class="help-block"><?php echo $serialnumber_err; ?></span>
             </div>
+            <div class="form-group <?php echo (!empty($vehicle_inspection_current_err)) ? 'has-error' : ''; ?>">
+                <label>Vehicle inspection status</label>
+                <input type="text" name="vehicle_inspection_current" class="form-control" value="<?php echo $vehicle_inspection_current; ?>">
+                <span class="help-block"><?php echo $vehicle_inspection_current_err; ?></span>
+            </div>
+            <div>
+                <label>Next vehicle inspection status</label>
+                <input type="text" name="vehicle_inspection_next" class="form-control" value="<?php echo $vehicle_inspection_next; ?>">
+            </div>
+            <div class="form-group <?php echo (!empty($description_err)) ? 'has-error' : ''; ?>">
+                <label>Description</label>
+                <input type="text" name="description" class="form-control" value="<?php echo $description; ?>">
+                <span class="help-block"><?php echo $description_err; ?></span>
+            </div>
             <div>
               <!--<form method="post" enctype="multipart/form-data">-->
-                <label>Picture</label>
+                <label>Pictures</label>
                 <input type="file" name="PhotoOne" class="form-control" value="<?php echo $photoOne; ?>">
+                <input type="file" name="PhotoTwo" class="form-control" value="<?php echo $photoTwo; ?>">
+                <input type="file" name="PhotoThree" class="form-control" value="<?php echo $photoThree; ?>">
+                <input type="file" name="PhotoFour" class="form-control" value="<?php echo $photoFour; ?>">
+                <input type="file" name="PhotoFive" class="form-control" value="<?php echo $photoFive; ?>">
               <!--</form>-->
             </div>
             <div class="form-group">
