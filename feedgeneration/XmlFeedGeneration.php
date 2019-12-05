@@ -52,6 +52,12 @@ if($datacount > 0)
     $car->appendChild($gear_type);
     $serialnumber = $doc->createElement('serialnumber', $dataextracter[$i]['serialnumber']);
     $car->appendChild($serialnumber);
+    $vehicle_inspection_current = $doc->createElement('vehicle_inspection_current', $dataextracter[$i]['vehicle_inspection_current']);
+    $car->appendChild($vehicle_inspection_current);
+    $vehicle_inspection_next = $doc->createElement('vehicle_inspection_next', $dataextracter[$i]['vehicle_inspection_next']);
+    $car->appendChild($vehicle_inspection_next);
+    $description = $doc->createElement('description', $dataextracter[$i]['description']);
+    $car->appendChild($description);
     $updated = $doc->createElement('updated', $dataextracter[$i]['updated']);
     $car->appendChild($updated);
   }

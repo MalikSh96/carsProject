@@ -19,29 +19,35 @@ if($datacount > 0)
 {
   for ($i = 0; $i < $datacount; $i++)
   {
-    $id            = $dataextracter[$i]['id'];
-    $design        = $dataextracter[$i]['design'];
-    $design_model  = $dataextracter[$i]['design_model'];
-    $fuel          = $dataextracter[$i]['fuel'];
-    $model_year    = $dataextracter[$i]['model_year'];
-    $kilometers    = $dataextracter[$i]['kilometers'];
-    $color         = $dataextracter[$i]['color'];
-    $steering_type = $dataextracter[$i]['steering_type'];
-    $gear_type     = $dataextracter[$i]['gear_type'];
-    $serialnumber  = $dataextracter[$i]['serialnumber'];
-    $updated       = $dataextracter[$i]['updated'];
+    $id                         = $dataextracter[$i]['id'];
+    $design                     = $dataextracter[$i]['design'];
+    $design_model               = $dataextracter[$i]['design_model'];
+    $fuel                       = $dataextracter[$i]['fuel'];
+    $model_year                 = $dataextracter[$i]['model_year'];
+    $kilometers                 = $dataextracter[$i]['kilometers'];
+    $color                      = $dataextracter[$i]['color'];
+    $steering_type              = $dataextracter[$i]['steering_type'];
+    $gear_type                  = $dataextracter[$i]['gear_type'];
+    $serialnumber               = $dataextracter[$i]['serialnumber'];
+    $vehicle_inspection_current = $dataextracter[$i]['vehicle_inspection_current'];
+    $vehicle_inspection_next    = $dataextracter[$i]['vehicle_inspection_next'];
+    $description                = $dataextracter[$i]['description'];
+    $updated                    = $dataextracter[$i]['updated'];
 
-    $posts[] = array('id'           => $id,
-                    'design'        => $design,
-                    'design_model'  => $design_model,
-                    'fuel'          => $fuel,
-                    'model_year'    => $model_year,
-                    'kilometers'    => $kilometers,
-                    'color'         => $color,
-                    'steeringType'  => $steering_type,
-                    'gear_type'     => $gear_type,
-                    'serialnumber'  => $serialnumber,
-                    'updated'       => $updated);
+    $posts[] = array('id'                        => $id,
+                    'design'                     => $design,
+                    'design_model'               => $design_model,
+                    'fuel'                       => $fuel,
+                    'model_year'                 => $model_year,
+                    'kilometers'                 => $kilometers,
+                    'color'                      => $color,
+                    'steeringType'               => $steering_type,
+                    'gear_type'                  => $gear_type,
+                    'serialnumber'               => $serialnumber,
+                    'vehicle_inspection_current' => $vehicle_inspection_current,
+                    'vehicle_inspection_next'    => $vehicle_inspection_next,
+                    'description'                => $description,
+                    'updated'                    => $updated);
   }
 }
 

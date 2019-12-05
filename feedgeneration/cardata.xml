@@ -11,6 +11,25 @@
     <steeringType>Non-Servo</steeringType>
     <gearType>Auto</gearType>
     <serialnumber>VWLupo2004</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Little economically friendly car, that can take you anywhere, has aux cord but no aircondition</description>
     <updated>2019-12-04 07:35:52</updated>
+  </car>
+  <car>
+    <id>4</id>
+    <design>Kia</design>
+    <designModel>Picanto</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2010</modelYear>
+    <kilometers>300000</kilometers>
+    <color>Matte white</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>KiaPicanto2010</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Good little car</description>
+    <updated>2019-12-05 12:33:58</updated>
   </car>
 </information>
