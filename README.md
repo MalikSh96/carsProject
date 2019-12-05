@@ -29,7 +29,7 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -A user can now edit their own information --> As of now it is only possible for the user to edit their firstname and lastname (1).\
   -An admin can set rights to a user --> Issue is you can't set a users role to 0 (2).\
   -For now you can add ONLY one picture when creating a car (3).\
-  -Once you create a car, a folder gets created named after the serialnumber of the car --> Issue is when you create a car, it takes the corresponding picture to it and puts it in the folder, but the picture is empty (4).
+  -Once you create a car, a folder gets created named after the serialnumber of the car --> Issue is when you create a car, it takes the corresponding picture to it and puts it in the folder, but the picture is empty (4).\
   -^For the above part I have fixed the issue, only thing right now is that I only take ONE picture --> need to redo that later.\
 
 
