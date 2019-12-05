@@ -31,6 +31,7 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -For now you can add ONLY one picture when creating a car (3).\
   -Once you create a car, a folder gets created named after the serialnumber of the car --> Issue is when you create a car, it takes the corresponding picture to it and puts it in the folder, but the picture is empty (4).\
   -^For the above part (4) I have fixed the issue, only thing right now is that I only take ONE picture --> need to redo that later.\
+  -I believe I have made it, so that admin only pathes can't get reached.
 
 
 # What do we need and where do we want to go
@@ -46,4 +47,5 @@ Made a few different paths that a user can redirect to, also now it is possible 
 
 # The most up-to-date branches
   -Master.\
-  -Createfolders.
+  -Createfolders.\
+  -Securityoptimizer.
