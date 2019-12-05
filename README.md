@@ -43,3 +43,7 @@ Made a few different paths that a user can redirect to, also now it is possible 
   \
   \
   -On top of all that, once the project is ready to go on the cloud, you need to refactor the pathes that copies from one folder to another.
+
+# The most up-to-date branches
+  -Master.\
+  -Createfolders.
