@@ -13,7 +13,7 @@ function createCarHandler($design, $design_model, $fuel,
                           $model_year, $kilometers, $color,
                           $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
-                          $description, $updated,
+                          $description,
                           $photoOne, $photoTwo, $photoThree, $photoFour, $photoFive)
 {
   global $conn;
@@ -48,7 +48,7 @@ function updateCarHandler($design, $design_model, $fuel,
                           $model_year, $kilometers, $color,
                           $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
-                          $description, $updated)
+                          $description)
 {
   global $conn;
   $design                     = mysqli_real_escape_string($conn, $design);
@@ -64,7 +64,6 @@ function updateCarHandler($design, $design_model, $fuel,
   $vehicle_inspection_next    = mysqli_real_escape_string($conn, $vehicle_inspection_next);
   $description                = mysqli_real_escape_string($conn, $description);
   $updated                    = date("Y/m/d h:i:s");
-  $updated        = date("Y/m/d h:i:s");
 
   updateCar($design, $design_model, $fuel,
                       $model_year, $kilometers, $color,

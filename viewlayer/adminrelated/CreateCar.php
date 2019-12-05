@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                                 $model_year, $kilometers, $color,
                                 $steering_type, $gear_type, $serialnumber,
                                 $vehicle_inspection_current, $vehicle_inspection_next,
-                                $description, $updated,
+                                $description,
                                 $photoOne, $photoTwo, $photoThree, $photoFour, $photoFive);
 
       //Link: https://www.php.net/manual/en/function.mkdir.php
@@ -165,15 +165,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
 
       //https://stackoverflow.com/questions/15117303/saving-image-straight-to-directory-in-php
-      $link = array();
-      $link = [
+      $images[] = array(
         "photoOne" => $photoOne,
         "photoTwo" => $photoTwo,
         "photoThree" => $photoThree,
         "photoFour" => $photoFour,
         "photoFive" => $photoFive,
-      ];
-      var_dump($link);
+      );
+      var_dump($images);
       echo "<br>";
       //die;
 
@@ -195,7 +194,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       //die;
       //create new file and write what you read from old file into it
       $fd = fopen($newfile, 'w');
-      fwrite($fd, $page_contents);
+      fwrite($fd, $page_contents); //2nd parameter is the data we insert
       fclose ($fd); //close the file
 
       //redirecting after registering a car
