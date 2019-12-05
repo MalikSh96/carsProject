@@ -95,7 +95,7 @@ $(document).ready( function () {
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
             TO SHOW THE ENTIRE INFORMATION TABLE.
           -->
-          <a href= "cars\Carinformation.php?id=<?php echo $data[$i]['id']; ?>">
+          <a href= "cars\CarinformationUser.php?id=<?php echo $data[$i]['id']; ?>">
             <?php echo $data[$i]['design']; ?>
           </a>
         </td>
