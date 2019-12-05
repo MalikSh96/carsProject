@@ -16,6 +16,11 @@ $steering_type  = "";
 $gear_type      = "";
 $serialnumber   = "";
 
+$vehicle_inspection_current = "";
+$vehicle_inspection_next    = "";
+
+$description                = "";
+
 $design_err         = "";
 $design_model_err   = "";
 $fuel_err           = "";
@@ -25,6 +30,8 @@ $color_err          = "";
 $steering_type_err  = "";
 $gear_type_err      = "";
 $serialnumber_err   = "";
+$description_err    = "";
+$vehicle_inspection_current_err = "";
 
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
@@ -82,6 +89,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $serialnumber_err = "Please enter the serialnumber of the car.";
   }
 
+  if(empty(trim($_POST["description"]))){
+    $description_err = "Please enter a saying description of the car.";
+  } else{
+    $description = trim($_POST["description"]);
+  }
+
+  if(empty(trim($_POST["vehicle_inspection_current"]))){
+    $vehicle_inspection_current_err = "Please enter if the car has been inspected. USE either 1 or 0. \n1 is inspected. \n0 is not inspected";
+  } else{
+    $vehicle_inspection_current = trim($_POST["vehicle_inspection_current"]);
+  }
+
   //If every form is filled we go down here
   if(empty($design_err)
       && empty($design_model_err)
@@ -91,7 +110,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       && empty($color_err)
       && empty($steering_type_err)
       && empty($gear_type_err)
-      && empty($serialnumber_err))
+      && empty($serialnumber_err)
+      && empty($description_err)
+      && empty($vehicle_inspection_current_err))
   {
     // Check input errors before inserting in database
     $serialnumber = trim($_POST['serialnumber']);
@@ -104,8 +125,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       //die;
 
       //If everyhing is correct we register the car
-      updateCarHandler($design, $design_model, $fuel, $model_year,
-                      $kilometers, $color, $steering_type, $gear_type, $serialnumber);
+      updateCarHandler($design, $design_model, $fuel,
+                                $model_year, $kilometers, $color,
+                                $steering_type, $gear_type, $serialnumber,
+                                $vehicle_inspection_current, $vehicle_inspection_next,
+                                $description, $updated);
       //redirecting after registering a car
       header("location: \CarsProject\Index.php");
       //die;
@@ -182,6 +206,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Serialnumber</label>
                 <input type="text" name="serialnumber" class="form-control" value="<?php echo $serialnumber; ?>">
                 <span class="help-block"><?php echo $serialnumber_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($vehicle_inspection_current_err)) ? 'has-error' : ''; ?>">
+                <label>Vehicle inspection status</label>
+                <input type="text" name="vehicle_inspection_current" class="form-control" value="<?php echo $vehicle_inspection_current; ?>">
+                <span class="help-block"><?php echo $vehicle_inspection_current_err; ?></span>
+            </div>
+            <div>
+                <label>Next vehicle inspection status</label>
+                <input type="text" name="vehicle_inspection_next" class="form-control" value="<?php echo $vehicle_inspection_next; ?>">
+            </div>
+            <div class="form-group <?php echo (!empty($description_err)) ? 'has-error' : ''; ?>">
+                <label>Description</label>
+                <input type="text" name="description" class="form-control" value="<?php echo $description; ?>">
+                <span class="help-block"><?php echo $description_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Submit">

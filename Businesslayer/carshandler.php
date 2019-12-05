@@ -44,20 +44,33 @@ function createCarHandler($design, $design_model, $fuel,
             $photoOne, $photoTwo, $photoThree, $photoFour, $photoFive);
 }
 
-function updateCarHandler($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber){
+function updateCarHandler($design, $design_model, $fuel,
+                          $model_year, $kilometers, $color,
+                          $steering_type, $gear_type, $serialnumber,
+                          $vehicle_inspection_current, $vehicle_inspection_next,
+                          $description, $updated)
+{
   global $conn;
-  $design         = mysqli_real_escape_string($conn, $design);
-  $design_model   = mysqli_real_escape_string($conn, $design_model);
-  $fuel           = mysqli_real_escape_string($conn, $fuel);
-  $model_year     = mysqli_real_escape_string($conn, $model_year);
-  $kilometers     = mysqli_real_escape_string($conn, $kilometers);
-  $color          = mysqli_real_escape_string($conn, $color);
-  $steering_type  = mysqli_real_escape_string($conn, $steering_type);
-  $gear_type      = mysqli_real_escape_string($conn, $gear_type);
-  $serialnumber   = mysqli_real_escape_string($conn, $serialnumber);
+  $design                     = mysqli_real_escape_string($conn, $design);
+  $design_model               = mysqli_real_escape_string($conn, $design_model);
+  $fuel                       = mysqli_real_escape_string($conn, $fuel);
+  $model_year                 = mysqli_real_escape_string($conn, $model_year);
+  $kilometers                 = mysqli_real_escape_string($conn, $kilometers);
+  $color                      = mysqli_real_escape_string($conn, $color);
+  $steering_type              = mysqli_real_escape_string($conn, $steering_type);
+  $gear_type                  = mysqli_real_escape_string($conn, $gear_type);
+  $serialnumber               = mysqli_real_escape_string($conn, $serialnumber);
+  $vehicle_inspection_current = mysqli_real_escape_string($conn, $vehicle_inspection_current);
+  $vehicle_inspection_next    = mysqli_real_escape_string($conn, $vehicle_inspection_next);
+  $description                = mysqli_real_escape_string($conn, $description);
+  $updated                    = date("Y/m/d h:i:s");
   $updated        = date("Y/m/d h:i:s");
 
-  updateCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated);
+  updateCar($design, $design_model, $fuel,
+                      $model_year, $kilometers, $color,
+                        $steering_type, $gear_type, $serialnumber,
+                          $vehicle_inspection_current, $vehicle_inspection_next,
+                          $description, $updated);
 }
 
 function deleteCarHandler($serialnumber){

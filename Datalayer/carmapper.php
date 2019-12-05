@@ -59,7 +59,13 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
     }
   }
 
-  function updateCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $steering_type, $gear_type, $serialnumber, $updated){
+  //Update this function later to be able to update images too
+  function updateCar($design, $design_model, $fuel,
+                      $model_year, $kilometers, $color,
+                        $steering_type, $gear_type, $serialnumber,
+                          $vehicle_inspection_current, $vehicle_inspection_next,
+                          $description, $updated)
+  {
     global $conn; //using global before $conn to make this function awaare to access the connection
     if(!$conn)
     {
@@ -76,6 +82,9 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     steering_type = '$steering_type',
                     gear_type = '$gear_type',
                     serialnumber = '$serialnumber',
+                    vehicle_inspection_current = '$vehicle_inspection_current',
+                    vehicle_inspection_next = '$vehicle_inspection_next',
+                    description = '$description',
                     updated = '$updated'
                     WHERE serialnumber = '$serialnumber'";
       var_dump($query);
