@@ -179,6 +179,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       $destdir = $dir . "/";
 
+      //Link used: https://www.daniweb.com/programming/web-development/threads/418205/copy-image-from-one-folder-to-another
       //The code part that copies our photos from one folder to another
       $img = $photoOne; //name of file to be copied
       //read the file
