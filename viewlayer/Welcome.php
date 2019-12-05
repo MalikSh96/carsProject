@@ -6,7 +6,11 @@ session_start();
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: Login.php");
     exit;
+
 }
+// Check if the user is already logged in, if yes then redirect him to welcome page
+elseif(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+&& $_SESSION["isAdmin"] == 1){
 ?>
 
 <?php
@@ -146,3 +150,12 @@ $(document).ready( function () {
     </p>
 </body>
 </html>
+<?php } ?>
+
+<?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    //header("location: Login.php");
+    include('C:\xampp\htdocs\CarsProject\viewlayer\unauthorizedaccess\DenyAccess.php');
+    //exit;
+}
+?>

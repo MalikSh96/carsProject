@@ -2,6 +2,13 @@
 //Link for uploading a photo: https://www.youtube.com/watch?v=JaRq73y5MJk
 //This file is for adding a car to the database
 
+//Using a session to protect the rights of messign around with the page
+session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+    && $_SESSION["isAdmin"] == 1){
+
 include 'C:\xampp\htdocs\CarsProject\businesslayer\carshandler.php';
 
 // Include config file
@@ -42,7 +49,7 @@ $description_err    = "";
 $vehicle_inspection_current_err = "";
 
 // Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+if($_SERVER["REQUEST_METHOD"] == "POST" && $_SESSION["isAdmin"] == 1){
   global $conn;
 
   if(empty(trim($_POST["design"]))){
@@ -205,6 +212,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($conn);
 }
+
 ?>
 
 <?php $currentPage = 'createcar'; ?>
@@ -306,3 +314,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 </body>
 </html>
+<?php } ?>
+
+<?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    //header("location: Login.php");
+    include('C:\xampp\htdocs\CarsProject\viewlayer\unauthorizedaccess\DenyAccess.php');
+    //exit;
+}
+?>

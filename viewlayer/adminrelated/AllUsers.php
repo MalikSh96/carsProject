@@ -1,3 +1,11 @@
+<?php
+//Using a session to protect the rights of messign around with the page
+session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+    && $_SESSION["isAdmin"] == 1){
+?>
 <!DOCTYPE html>
 <html>
 <?php $currentPage = 'AllUsers'; ?>
@@ -105,3 +113,13 @@ $(document).ready( function () {
   </div>
 </body>
 </html>
+
+<?php } ?>
+
+<?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    //header("location: Login.php");
+    include('C:\xampp\htdocs\CarsProject\viewlayer\unauthorizedaccess\DenyAccess.php');
+    //exit;
+}
+?>
