@@ -30,6 +30,7 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -An admin can set rights to a user --> Issue is you can't set a users role to 0 (2).\
   -For now you can add ONLY one picture when creating a car (3).\
   -Once you create a car, a folder gets created named after the serialnumber of the car --> Issue is when you create a car, it takes the corresponding picture to it and puts it in the folder, but the picture is empty (4).
+  -^For the above part I have fixed the issue, only thing right now is that I only take ONE picture --> need to redo that later.\
 
 
 # What do we need and where do we want to go
@@ -37,4 +38,9 @@ Made a few different paths that a user can redirect to, also now it is possible 
   -Need to fix (2).\
   -Need to fix (3) to add more pictures.\
   -Need to fix (4).\
+  -(4) is partly fixed.\
+  -Need to refactor the EditCar function so that it corresponds with the amount of data from the database.\
   -Need to fix so that when editing information, you don't have to retype all information in order to edit just one field, because as of now when you try to edit one field you need to fill all other fields again in order for it to proceed.
+  \
+  \
+  -On top of all that, once the project is ready to go on the cloud, you need to refactor the pathes that copies from one folder to another.

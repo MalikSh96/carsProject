@@ -137,6 +137,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $photoFour = trim($_POST['PhotoFour']);
       $photoFive = trim($_POST['PhotoFive']);
 
+      var_dump($photoOne);
+      echo "<br>";
+      //die;
+
       //If everyhing is correct we register the car
       createCarHandler($design, $design_model, $fuel,
                                 $model_year, $kilometers, $color,
@@ -169,16 +173,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         "photoFour" => $photoFour,
         "photoFive" => $photoFive,
       ];
-      $destdir = $dir . "/";
-      $img = file_get_contents($link);
-      file_put_contents($destdir.substr($link, strrpos($link,'/')), $img);
-      //imagejpeg($img, 'CarsProject/images/');
+      var_dump($link);
+      echo "<br>";
+      //die;
 
-      /*$file = fopen($dir . '/' . $file_to_write,"w");
-      //Writing to our file
-      fwrite($file, $file_to_write);
-      // closes the file
-      fclose($file);*/
+      $destdir = $dir . "/";
+
+      //The code part that copies our photos from one folder to another
+      $img = $photoOne; //name of file to be copied
+      //read the file
+      $fp = fopen('C:/Users/malik/Desktop/BackgroundPics/'. $photoOne, 'r') or die("Could not contact $photoOne");
+      $page_contents = "";
+      while ($new_text = fread($fp, 100))
+      {
+        $page_contents .= $new_text;
+      }
+      chdir($destdir); //This moves you from the current directory user to the images directory in the new user's directory
+      $newfile = $photoOne; //name of your new file
+      var_dump($newfile);
+      //die;
+      //create new file and write what you read from old file into it
+      $fd = fopen($newfile, 'w');
+      fwrite($fd, $page_contents);
+      fclose ($fd); //close the file
 
       //redirecting after registering a car
       header("location: \CarsProject\Index.php");
