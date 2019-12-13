@@ -46,7 +46,7 @@ function createCarHandler($design, $design_model, $fuel,
 }
 
 function updateCarHandler($design, $design_model, $fuel,
-                          $model_year, $kilometers, $color,
+                          $model_year, $kilometers, $color, $price,
                           $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
                           $description)
@@ -58,6 +58,7 @@ function updateCarHandler($design, $design_model, $fuel,
   $model_year                 = mysqli_real_escape_string($conn, $model_year);
   $kilometers                 = mysqli_real_escape_string($conn, $kilometers);
   $color                      = mysqli_real_escape_string($conn, $color);
+  $price                      = mysqli_real_escape_string($conn, $price);
   $steering_type              = mysqli_real_escape_string($conn, $steering_type);
   $gear_type                  = mysqli_real_escape_string($conn, $gear_type);
   $serialnumber               = mysqli_real_escape_string($conn, $serialnumber);
@@ -67,7 +68,7 @@ function updateCarHandler($design, $design_model, $fuel,
   $updated                    = date("Y/m/d h:i:s");
 
   updateCar($design, $design_model, $fuel,
-                      $model_year, $kilometers, $color,
+                      $model_year, $kilometers, $color, $price,
                         $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
                           $description, $updated);

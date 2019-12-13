@@ -63,7 +63,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
   //Update this function later to be able to update images too
   function updateCar($design, $design_model, $fuel,
-                      $model_year, $kilometers, $color,
+                      $model_year, $kilometers, $color, $price,
                         $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
                           $description, $updated)
@@ -81,6 +81,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     model_year = '$model_year',
                     kilometers = '$kilometers',
                     color = '$color',
+                    price_dk = '$price',
                     steering_type = '$steering_type',
                     gear_type = '$gear_type',
                     serialnumber = '$serialnumber',

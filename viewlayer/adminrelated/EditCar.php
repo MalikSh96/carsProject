@@ -19,6 +19,7 @@ $fuel           = "";
 $model_year;
 $kilometers;
 $color          = "";
+$price;
 $steering_type  = "";
 $gear_type      = "";
 $serialnumber   = "";
@@ -34,6 +35,7 @@ $fuel_err           = "";
 $model_year_err     = "";
 $kilometers_err     = "";
 $color_err          = "";
+$price_err          = "";
 $steering_type_err  = "";
 $gear_type_err      = "";
 $serialnumber_err   = "";
@@ -80,6 +82,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $color = trim($_POST['color']);
   }
 
+  if(empty(trim($_POST["price"]))){
+    $price_err = "Please enter the price of the car.";
+  } else{
+    $price = trim($_POST['price']);
+  }
+
   if(empty(trim($_POST["steering_type"]))){
     $steering_type_err = "Please enter the type of steering.";
   } else{
@@ -115,6 +123,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       && empty($model_year_err)
       && empty($kilometers_err)
       && empty($color_err)
+      && empty($price_err)
       && empty($steering_type_err)
       && empty($gear_type_err)
       && empty($serialnumber_err)
@@ -133,7 +142,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
       //If everyhing is correct we register the car
       updateCarHandler($design, $design_model, $fuel,
-                                $model_year, $kilometers, $color,
+                                $model_year, $kilometers, $color, $price,
                                 $steering_type, $gear_type, $serialnumber,
                                 $vehicle_inspection_current, $vehicle_inspection_next,
                                 $description, $updated);
@@ -198,6 +207,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <label>Color of car</label>
                 <input type="text" name="color" class="form-control" value="<?php echo $color; ?>">
                 <span class="help-block"><?php echo $color_err; ?></span>
+            </div>
+            <div class="form-group <?php echo (!empty($price_err)) ? 'has-error' : ''; ?>">
+                <label>Price of car</label>
+                <input type="number" name="price" class="form-control" value="<?php echo $price; ?>">
+                <span class="help-block"><?php echo $price_err; ?></span>
             </div>
             <div class="form-group <?php echo (!empty($steering_type_err)) ? 'has-error' : ''; ?>">
                 <label>Steering type</label>

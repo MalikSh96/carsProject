@@ -59,8 +59,8 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <th>Gear type</th>
           <th>Current vehicle inspection status</th>
           <th>Description</th>
-          <th>Photos</th>
-          <th>WILL GET FILLED WITH MORE LATER</th>
+          <!--<th>Photos</th>-->
+          <!--<th>WILL GET FILLED WITH MORE LATER</th>-->
           <!--<th></th>
           <th></th>
           <th></th>-->
@@ -124,14 +124,16 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
                     //. $data[$i]['PhotoFive']; ?>" alt="" width="100" height="100" class="img-responsive"/>
           <?php //echo $data[$i]['PhotoOne']; //<-- this just echoes out the name of photo ?>
         </td> -->
-				<td>
+				<!--<td>
           <?php //Fill with more data ?>
-				</td>
+				</td>-->
 			</tr>
+
       <div name="photos">
         <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                  . $data[$i]['PhotoOne']; ?>" alt="" width="200" height="200" class="img-responsive"/>
+                  . $data[$i]['PhotoOne']; ?>" alt="" width="400" height="400" class="img-responsive"/>
       </div>
+
       <?php
         }
       ?>
