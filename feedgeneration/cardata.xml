@@ -19,17 +19,145 @@
   <car>
     <id>4</id>
     <design>Kia</design>
-    <designModel>Picanto</designModel>
+    <designModel>Picanto 2.0 Sport</designModel>
     <fuel>Benzin</fuel>
     <modelYear>2010</modelYear>
-    <kilometers>300000</kilometers>
-    <color>Matte white</color>
+    <kilometers>310000</kilometers>
+    <color>Metallic White</color>
     <steeringType>Servo</steeringType>
     <gearType>Manual</gearType>
     <serialnumber>KiaPicanto2010</serialnumber>
     <vehicle_inspection_current>1</vehicle_inspection_current>
     <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
-    <description>Good little car</description>
-    <updated>2019-12-05 12:33:58</updated>
+    <description>Good little car, drives a lot on the liter</description>
+    <updated>2019-12-05 01:27:03</updated>
+  </car>
+  <car>
+    <id>5</id>
+    <design>Chevrolet</design>
+    <designModel>Corvette</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2017</modelYear>
+    <kilometers>45000</kilometers>
+    <color>Fire Red</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Auto</gearType>
+    <serialnumber>ChevyCorvette4321</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Quick car that accelerates rappidly</description>
+    <updated>2019-12-05 01:42:08</updated>
+  </car>
+  <car>
+    <id>6</id>
+    <design>Audi</design>
+    <designModel>A3</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2016</modelYear>
+    <kilometers>150000</kilometers>
+    <color>White</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>AudiA3</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>White Audi</description>
+    <updated>2019-12-05 01:51:34</updated>
+  </car>
+  <car>
+    <id>7</id>
+    <design>Fiat</design>
+    <designModel>500</designModel>
+    <fuel>Diesel</fuel>
+    <modelYear>2011</modelYear>
+    <kilometers>300000</kilometers>
+    <color>Navy</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>Fiat500</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Fiat 500 little car</description>
+    <updated>2019-12-05 02:00:19</updated>
+  </car>
+  <car>
+    <id>9</id>
+    <design>Kia</design>
+    <designModel>Rio</designModel>
+    <fuel>Diesel</fuel>
+    <modelYear>2011</modelYear>
+    <kilometers>300000</kilometers>
+    <color>Green</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>KiaRio</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Economically friendly car</description>
+    <updated>2019-12-05 02:06:37</updated>
+  </car>
+  <car>
+    <id>10</id>
+    <design>Dodge</design>
+    <designModel>Charger</designModel>
+    <fuel>Diesel</fuel>
+    <modelYear>2019</modelYear>
+    <kilometers>1000</kilometers>
+    <color>Ocean blue</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>DodgeCharger2019</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Fastest car in the stock</description>
+    <updated>2019-12-05 02:39:31</updated>
+  </car>
+  <car>
+    <id>11</id>
+    <design>Ford</design>
+    <designModel>Mondeo</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>1999</modelYear>
+    <kilometers>540000</kilometers>
+    <color>Green</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>FordMondeo99</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Simple ford mondeo</description>
+    <updated>2019-12-05 02:46:10</updated>
+  </car>
+  <car>
+    <id>12</id>
+    <design>Ford</design>
+    <designModel>Mondeo</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2002</modelYear>
+    <kilometers>500000</kilometers>
+    <color>Black</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>FordMondeo2002</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>Usual ford mondeo</description>
+    <updated>2019-12-05 02:47:53</updated>
+  </car>
+  <car>
+    <id>13</id>
+    <design>Ford</design>
+    <designModel>Mondeo</designModel>
+    <fuel>Benzin</fuel>
+    <modelYear>2008</modelYear>
+    <kilometers>400000</kilometers>
+    <color>Green</color>
+    <steeringType>Servo</steeringType>
+    <gearType>Manual</gearType>
+    <serialnumber>FordMondeo08</serialnumber>
+    <vehicle_inspection_current>1</vehicle_inspection_current>
+    <vehicle_inspection_next>0000-00-00 00:00:00</vehicle_inspection_next>
+    <description>A Ford Mondeo from 2008</description>
+    <updated>2019-12-05 02:49:08</updated>
   </car>
 </information>

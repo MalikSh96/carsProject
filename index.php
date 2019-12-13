@@ -77,7 +77,7 @@ $(document).ready( function () {
           <th style="width: 25%">Design</th>
           <th>Design model</th>
           <th>Model year</th>
-          <th>Color</th>
+          <th>Price in DK</th>
           <!--<th></th>
           <th></th>-->
         </tr>
@@ -106,7 +106,7 @@ $(document).ready( function () {
           <?php echo $data[$i]['model_year']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['color']; ?>
+          <?php echo $data[$i]['price_dk']; ?>
         </td>
         <!--<td>
           <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->

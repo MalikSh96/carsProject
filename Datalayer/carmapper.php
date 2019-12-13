@@ -3,7 +3,7 @@
 include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 
   function createCar($design, $design_model, $fuel,
-                      $model_year, $kilometers, $color,
+                      $model_year, $kilometers, $color, $price,
                         $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
                           $description, $updated,
@@ -22,6 +22,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     model_year,
                     kilometers,
                     color,
+                    price_dk,
                     steering_type,
                     gear_type,
                     serialnumber,
@@ -41,6 +42,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
                     '$model_year',
                     '$kilometers',
                     '$color',
+                    '$price',
                     '$steering_type',
                     '$gear_type',
                     '$serialnumber',

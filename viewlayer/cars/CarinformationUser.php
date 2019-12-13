@@ -54,6 +54,7 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
           <th>Model year</th>
           <th>Kilometers</th>
           <th>Color</th>
+          <th>Price</th>
           <th>Steering type</th>
           <th>Gear type</th>
           <th>Current vehicle inspection status</th>
@@ -90,6 +91,9 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
 				<td>
           <?php echo $data[$i]['color']; ?>
         </td>
+        <td>
+          <?php echo $data[$i]['price_dk']; ?>
+        </td>
 				<td>
           <?php echo $data[$i]['steering_type']; ?>
         </td>
@@ -102,28 +106,32 @@ include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
         <td>
           <?php echo $data[$i]['description']; ?>
 				</td>
-        <td>
+        <!-- <td>
           <!--Used this link to display image: https://stackoverflow.com/questions/23842268/how-to-display-image-from-database-using-php-->
-          <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoOne']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+          <!--<img src="/CarsProject/images/<?php //echo $data[$i]['serialnumber'] . "/"
+                    //. $data[$i]['PhotoOne']; ?>" alt="" width="100" height="100" class="img-responsive"/>
 
-          <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoTwo']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+          <img src="/CarsProject/images/<?php //echo $data[$i]['serialnumber'] . "/"
+                    //. $data[$i]['PhotoTwo']; ?>" alt="" width="100" height="100" class="img-responsive"/>
 
-          <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoThree']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+          <img src="/CarsProject/images/<?php //echo $data[$i]['serialnumber'] . "/"
+                    //. $data[$i]['PhotoThree']; ?>" alt="" width="100" height="100" class="img-responsive"/>
 
-          <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoFour']; ?>" alt="" width="100" height="100" class="img-responsive"/>
+          <img src="/CarsProject/images/<?php //echo $data[$i]['serialnumber'] . "/"
+                    //. $data[$i]['PhotoFour']; ?>" alt="" width="100" height="100" class="img-responsive"/>
 
-          <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
-                    . $data[$i]['PhotoFive']; ?>" alt="" width="100" height="100" class="img-responsive"/>             
+          <img src="/CarsProject/images/<?php //echo $data[$i]['serialnumber'] . "/"
+                    //. $data[$i]['PhotoFive']; ?>" alt="" width="100" height="100" class="img-responsive"/>
           <?php //echo $data[$i]['PhotoOne']; //<-- this just echoes out the name of photo ?>
-        </td>
+        </td> -->
 				<td>
           <?php //Fill with more data ?>
 				</td>
 			</tr>
+      <div name="photos">
+        <img src="/CarsProject/images/<?php echo $data[$i]['serialnumber'] . "/"
+                  . $data[$i]['PhotoOne']; ?>" alt="" width="200" height="200" class="img-responsive"/>
+      </div>
       <?php
         }
       ?>

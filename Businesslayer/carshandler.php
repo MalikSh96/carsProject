@@ -10,7 +10,7 @@ include_once 'C:\xampp\htdocs\CarsProject\datalayer\Db_connection.php';
 //https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
 
 function createCarHandler($design, $design_model, $fuel,
-                          $model_year, $kilometers, $color,
+                          $model_year, $kilometers, $color, $price,
                           $steering_type, $gear_type, $serialnumber,
                           $vehicle_inspection_current, $vehicle_inspection_next,
                           $description,
@@ -23,6 +23,7 @@ function createCarHandler($design, $design_model, $fuel,
   $model_year                 = mysqli_real_escape_string($conn, $model_year);
   $kilometers                 = mysqli_real_escape_string($conn, $kilometers);
   $color                      = mysqli_real_escape_string($conn, $color);
+  $price                      = mysqli_real_escape_string($conn, $price);
   $steering_type              = mysqli_real_escape_string($conn, $steering_type);
   $gear_type                  = mysqli_real_escape_string($conn, $gear_type);
   $serialnumber               = mysqli_real_escape_string($conn, $serialnumber);
@@ -37,7 +38,7 @@ function createCarHandler($design, $design_model, $fuel,
   $photoFive                  = $photoFive;
   //var_dump($photoOne);
   //die;
-  createCar($design, $design_model, $fuel, $model_year, $kilometers, $color,
+  createCar($design, $design_model, $fuel, $model_year, $kilometers, $color, $price,
             $steering_type, $gear_type, $serialnumber,
             $vehicle_inspection_current, $vehicle_inspection_next,
             $description, $updated,
