@@ -12,5 +12,7 @@ CREATE TABLE `information` (
     `color` varchar(45),
     `steering_type` varchar(45), #f.eks servostyring
     `gear_type` varchar(45),
+    `serialnumber` varchar(45) UNIQUE,
+    `updated` datetime,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

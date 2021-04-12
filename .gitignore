@@ -1,0 +1,4 @@
+# ignore database connection file
+cars_script.sql
+users_script.sql
+Db_connection.php

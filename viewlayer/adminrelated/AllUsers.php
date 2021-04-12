@@ -1,60 +1,22 @@
 <?php
-<<<<<<< HEAD
-  inlude_once 'Datalayer/connection.php';
+//Using a session to protect the rights of messign around with the page
+session_start();
+
+// Check if the user is already logged in, if yes then redirect him to welcome page
+if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
+    && $_SESSION["isAdmin"] == 1){
 ?>
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cars test</title>
-</head>
-<body>
-  <?php
-    print "test";
-    // $sql = "select * from information;";
-    // $result = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result); //checks for data
-    //
-    // if($resultCheck > 0){
-    //   while($row = mysqli_fetch_assoc($result)){
-    //     //mysqli_fetch_assoc() gets all results
-    //     //$row becomes and array due to ^
-    //     echo $row['modelyear'];
-    //   }
-    // }
-   ?>
-=======
-  //include 'Datalayer\db_connection.php';
-  include('businesslayer\Carshandler.php');
-  include 'businesslayer\Usershandler.php';
-
-  /*
-  OBS!!!
-  THESE CODINGS BELOW IS JUST FOR TEST PURPOSES
-  WHEN TIME IS RIGHT MOVE THEM AWAY FROM VIEW AND
-  USE THIS TYPE OF CODE IN THE BUSINESSLAYER
-  IN THAT WAY YOU PRESERVE THE 3 LAYER DESIGN AND PROTECT
-  YOUR CODE MORE AND ALSO REMEMBER TO AVOID MYSQL INJECTIONS
-  */
-?>
-
-<!DOCTYPE html>
-<?php $title = 'Home'; ?>
-<?php $metaTags = 'tag1 tag2'; ?>
-<?php $currentPage = 'index'; ?>
-
+<?php $currentPage = 'AllUsers'; ?>
 <?php
-include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+  include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingoneadmin.php');
+  include('C:\xampp\htdocs\CarsProject\viewlayer\ReturnBack.php');
+  include 'C:\xampp\htdocs\CarsProject\businesslayer\Usershandler.php';
 ?>
-<html>
-<!--<div>
-  <h3>Testing the login function</h3>
-  <?php
-    //getUserStatusHandler("malik96sharfo@hotmail.com", "malik2660");
-  ?>
-</div>-->
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Users</title>
 </head>
 <head>
   <!--Link used: https://www.webslesson.info/2016/10/datatables-jquery-plugin-with-php-mysql-and-bootstrap.html-->
@@ -75,11 +37,7 @@ $(document).ready( function () {
     });
 } );
 </script>
-
-<!--<form action="\CarsProject\viewlayer\adminrelated\CreateCar.php">
-  <button class="button button1">Register a car</button>
-</form>-->
-<body>
+  <body>
     <?php
       //We get all data here
       /*
@@ -89,7 +47,7 @@ $(document).ready( function () {
       //initializing our variable that will contain the data
       $data[] = array();
       //we assign the array to our function which returns an array
-      $data = returnAllCarsHandler();
+      $data = returnAllUsersHandler();
       //After we get the size of the array, so that we can loop through it for filling the data
       $datacount = count($data);
       if($datacount > 0)
@@ -98,12 +56,12 @@ $(document).ready( function () {
     <table id="datatable" class="table table-hover" align="center">
       <thead>
         <tr>
-          <th style="width: 25%">Design</th>
-          <th>Design model</th>
-          <th>Model year</th>
-          <th>Price in DK</th>
-          <!--<th></th>
-          <th></th>-->
+          <th style="width: 25%">Email</th>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>isAdmin</th>
+          <th></th>
+          <!--<th></th>-->
         </tr>
       </thead>
     <tbody>
@@ -119,30 +77,30 @@ $(document).ready( function () {
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
             TO SHOW THE ENTIRE INFORMATION TABLE.
           -->
-          <a href= "viewlayer\cars\CarinformationUser.php?id=<?php echo $data[$i]['id']; ?>">
-            <?php echo $data[$i]['design']; ?>
+          <a href= "\CarsProject\viewlayer\users\Userinformation.php?id=<?php echo $data[$i]['email']; ?>">
+            <?php echo $data[$i]['email']; ?>
           </a>
         </td>
 				<td>
-          <?php echo $data[$i]['design_model']; ?>
+          <?php echo $data[$i]['firstname']; ?>
 				</td>
 				<td>
-          <?php echo $data[$i]['model_year']; ?>
+          <?php echo $data[$i]['lastname']; ?>
         </td>
 				<td>
-          <?php echo $data[$i]['price_dk']; ?>
+          <?php echo $data[$i]['isAdmin']; ?>
         </td>
-        <!--<td>
+        <td>
           <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->
-          <!--<form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
+          <form action="\CarsProject\viewlayer\adminrelated\DeleteUser.php">
             <button class="button button2">Delete</button>
           </form>
         </td>
         <td>
-          <form action="\CarsProject\viewlayer\adminrelated\EditCar.php">
+          <form action="\CarsProject\viewlayer\adminrelated\AdminEditUser.php">
             <button class="button button2">Edit</button>
           </form>
-        </td>-->
+        </td>
 			</tr>
       <?php
         }
@@ -153,6 +111,15 @@ $(document).ready( function () {
   }
   ?>
   </div>
->>>>>>> 0df5aec5127fd7918f0bbb157ae74f9818ca4cd4
 </body>
 </html>
+
+<?php } ?>
+
+<?php
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    //header("location: Login.php");
+    include('C:\xampp\htdocs\CarsProject\viewlayer\unauthorizedaccess\DenyAccess.php');
+    //exit;
+}
+?>

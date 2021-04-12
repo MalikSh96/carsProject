@@ -1,40 +1,18 @@
 <?php
-<<<<<<< HEAD
-  inlude_once 'Datalayer/connection.php';
-?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cars test</title>
-</head>
-<body>
-  <?php
-    print "test";
-    // $sql = "select * from information;";
-    // $result = mysqli_query($conn, $sql);
-    // $resultCheck = mysqli_num_rows($result); //checks for data
-    //
-    // if($resultCheck > 0){
-    //   while($row = mysqli_fetch_assoc($result)){
-    //     //mysqli_fetch_assoc() gets all results
-    //     //$row becomes and array due to ^
-    //     echo $row['modelyear'];
-    //   }
-    // }
-   ?>
-=======
-  //include 'Datalayer\db_connection.php';
-  include('businesslayer\Carshandler.php');
-  include 'businesslayer\Usershandler.php';
+// Initialize the session
+session_start();
 
-  /*
-  OBS!!!
-  THESE CODINGS BELOW IS JUST FOR TEST PURPOSES
-  WHEN TIME IS RIGHT MOVE THEM AWAY FROM VIEW AND
-  USE THIS TYPE OF CODE IN THE BUSINESSLAYER
-  IN THAT WAY YOU PRESERVE THE 3 LAYER DESIGN AND PROTECT
-  YOUR CODE MORE AND ALSO REMEMBER TO AVOID MYSQL INJECTIONS
-  */
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: Login.php");
+    exit;
+}
+?>
+
+<?php
+  //include 'Datalayer\db_connection.php';
+  include('C:\xampp\htdocs\CarsProject\businesslayer\Carshandler.php');
+  include 'C:\xampp\htdocs\CarsProject\businesslayer\Usershandler.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,24 +21,22 @@
 <?php $currentPage = 'index'; ?>
 
 <?php
-include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylingone.php');
+include('C:\xampp\htdocs\CarsProject\viewlayer\css-styling\stylinguserloggedin.php');
 ?>
-<html>
-<!--<div>
-  <h3>Testing the login function</h3>
-  <?php
-    //getUserStatusHandler("malik96sharfo@hotmail.com", "malik2660");
-  ?>
-</div>-->
+
+<?php $currentPage = 'WelcomeUser'; ?>
+<?php
+//include('C:\xampp\htdocs\CarsProject\index.php');
+?>
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Welcome</title>
 </head>
 <head>
   <!--Link used: https://www.webslesson.info/2016/10/datatables-jquery-plugin-with-php-mysql-and-bootstrap.html-->
   <!--DATATABLES RELATED-->
-  <!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
-  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
   <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -119,7 +95,7 @@ $(document).ready( function () {
             BUT ONLY ONE PAGE, AND THAT PAGE SHPULD TAKE THE ID OF THE SPECIFIC CAR
             TO SHOW THE ENTIRE INFORMATION TABLE.
           -->
-          <a href= "viewlayer\cars\CarinformationUser.php?id=<?php echo $data[$i]['id']; ?>">
+          <a href= "cars\CarinformationUser.php?id=<?php echo $data[$i]['id']; ?>">
             <?php echo $data[$i]['design']; ?>
           </a>
         </td>
@@ -133,8 +109,7 @@ $(document).ready( function () {
           <?php echo $data[$i]['price_dk']; ?>
         </td>
         <!--<td>
-          <!--Link I follow: https://www.w3docs.com/snippets/html/how-to-create-an-html-button-that-acts-like-a-link.html-->
-          <!--<form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
+          <form action="\CarsProject\viewlayer\adminrelated\DeleteCar.php">
             <button class="button button2">Delete</button>
           </form>
         </td>
@@ -153,6 +128,14 @@ $(document).ready( function () {
   }
   ?>
   </div>
->>>>>>> 0df5aec5127fd7918f0bbb157ae74f9818ca4cd4
+</body>
+<body>
+    <div class="page-header">
+        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["email"]); ?></b>. Welcome to our site.</h1>
+    </div>
+    <p>
+        <!--<a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>--> <!--USE THIS FOR THE FUTURE EVVENTUALLY-->
+        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+    </p>
 </body>
 </html>
